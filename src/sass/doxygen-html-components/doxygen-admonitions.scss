@@ -1,0 +1,216 @@
+@use 'materialize';
+@use 'theme-variables';
+
+.section.see,
+.section.remark,
+.section.note,
+.section.warning,
+.section.pre,
+.section.post,
+.section.invariant,
+dl.deprecated,
+dl.bug,
+dl.todo,
+dl.test {
+  @extend .hoverable;
+  background-color: var(--bg-color);
+  border-bottom-left-radius: 0.1rem;
+  border-top-left-radius: 0.1rem;
+  margin: 2rem 0;
+  padding: 0;
+  box-shadow: 0 .2rem .5rem rgba(0, 0, 0, 0.125), 0 .025rem .05rem rgba(0, 0, 0, 0.125);
+}
+
+/*
+  @deprecated, @test, @todo, and @bug all have hyperlinked text in the admonition title
+  which conflicts with the background accent color, so use plain text color.
+ */
+// dt:not(.deprecated) .el,
+// dt:not(.deprecated) .el:visited,
+// dt:not(.deprecated) .el:hover {
+//   color: var(--text-color);
+// }
+
+.section.see dt,
+.section.remark dt,
+.section.note dt,
+.section.warning dt,
+.section.pre dt,
+.section.post dt,
+.section.invariant dt,
+dl.deprecated dt,
+dl.bug dt,
+dl.todo dt,
+dl.test dt {
+  padding: 3px 0 0px 10px;
+
+}
+
+.section.see dt::before,
+.section.remark dt::before,
+.section.note dt::before,
+.section.warning dt::before,
+.section.pre dt::before,
+.section.post dt::before,
+.section.invariant dt::before,
+dl.deprecated dt::before,
+dl.bug dt::before,
+dl.todo dt::before,
+dl.test dt::before {
+  vertical-align: middle;
+  font-family: "Material Icons Outlined";
+  font-size: 24px;
+  padding-right: 9px;
+}
+
+dl.section.see dd,
+dl.section.remark dd,
+dl.section.note dd,
+dl.section.warning dd,
+dl.section.pre dd,
+dl.section.post dd,
+dl.section.invariant dd,
+dl.deprecated dd,
+dl.bug dd,
+dl.todo dd,
+dl.test dd {
+  margin-bottom: unset;
+  margin-left: auto;
+  padding: 6px;
+}
+
+/* some of the admonitions use a .section class (see below for those that don't) */
+.section {
+
+  /* note admonition coloring */
+  &.note {
+    border-left: 5px solid hsl(55, var(--admonition-sat), var(--admonition-lightness));
+
+    dt {
+      background-color: hsla(55, var(--admonition-sat), var(--admonition-lightness), 0.1);
+
+      &:before {
+        font-family: "Material Icons Round";
+        content: "mode";
+        color: hsl(55, var(--admonition-sat), var(--admonition-lightness));
+      }
+    }
+  }
+
+  /* warning admonition coloring */
+  &.warning {
+    border-left: 5px solid hsl(0, var(--admonition-sat), var(--admonition-lightness));
+
+    dt {
+      background-color: hsla(0, var(--admonition-sat), var(--admonition-lightness), 0.1);
+
+      &:before {
+        content: "report_problem";
+        color: hsl(0, var(--admonition-sat), var(--admonition-lightness));
+      }
+    }
+  }
+
+  /* @pre @post @invariant admonition colors */
+  &.invariant,
+  &.pre,
+  &.post {
+    border-left: 5px solid hsl(120, var(--admonition-sat), var(--admonition-lightness));
+
+    dt {
+      background-color: hsla(120, var(--admonition-sat), var(--admonition-lightness), 0.1);
+
+      &::before {
+        color: hsl(120, var(--admonition-sat), var(--admonition-lightness));
+      }
+    }
+  }
+
+  &.pre dt:before,
+  &.post dt:before {
+    content: "format_quote";
+    font-family: "Material Icons Round";
+  }
+
+  &.invariant dt:before {
+    content: "description";
+  }
+
+  /* seealso and remarks adminition colors */
+  &.see,
+  &.remark {
+    border-left: 5px solid hsl(218, var(--admonition-sat), var(--admonition-lightness));
+
+    dt {
+      background-color: hsla(218, var(--admonition-sat), var(--admonition-lightness), 0.1);
+
+      &:before {
+        color: hsl(218, var(--admonition-sat), var(--admonition-lightness));
+      }
+    }
+  }
+
+  &.remark dt:before {
+    content: "article";
+  }
+
+  &.see dt:before {
+    font-family: "Material Icons Round";
+    content: "visibility";
+  }
+}
+
+/* the following adminitions don't use a .section class */
+dl {
+  &.test {
+    border-left: 5px solid hsl(273, var(--admonition-sat), var(--admonition-lightness));
+
+    dt {
+      background-color: hsla(273, var(--admonition-sat), var(--admonition-lightness), 0.1);
+
+      &:before {
+        content: "code";
+        color: hsl(273, var(--admonition-sat), var(--admonition-lightness));
+      }
+    }
+  }
+
+  &.deprecated {
+    border-left: 5px solid hsl(0, var(--none), calc(100% - var(--admonition-lightness)));
+
+    dt {
+      background-color: hsla(0, var(--none), calc(100% - var(--admonition-lightness)), 0.1);
+
+      &:before {
+        content: "auto_delete";
+        color: var(--text-color);
+      }
+    }
+  }
+
+  &.bug {
+    border-left: 5px solid hsl(23, var(--admonition-sat), var(--admonition-lightness));
+
+    dt {
+      background-color: hsla(23, var(--admonition-sat), var(--admonition-lightness), 0.1);
+
+      &:before {
+        content: "bug_report";
+        color: hsl(23, var(--admonition-sat), var(--admonition-lightness));
+      }
+    }
+  }
+
+  &.todo {
+    border-left: 5px solid hsl(189, var(--admonition-sat), var(--admonition-lightness));
+
+    dt {
+      background-color: hsla(189, var(--admonition-sat), var(--admonition-lightness), 0.1);
+
+      &::before {
+        content: "check_circle";
+        color: hsl(189, var(--admonition-sat), var(--admonition-lightness));
+      }
+    }
+  }
+}

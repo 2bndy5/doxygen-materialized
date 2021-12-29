@@ -1,0 +1,37 @@
+GENERATE_LATEX = NO
+INPUT = ./docs/test_src
+INPUT += ./README.md
+EXAMPLE_PATH = ./
+PROJECT_NAME = Doxygen Materialized
+PROJECT_BRIEF = A theme for Doxygen html output using the materialize-css framework
+PROJECT_LOGO = ./docs/bland_logo.png
+PROJECT_NUMBER = v0.1.0
+STRIP_FROM_PATH = docs
+
+SOURCE_BROWSER = YES
+INLINE_SOURCES = YES
+GENERATE_TREEVIEW = YES
+# DISABLE_INDEX = YES
+
+EXTRACT_ALL = YES
+ALWAYS_DETAILED_SEC = YES
+EXTRACT_PRIVATE = YES
+HTML_TIMESTAMP = YES
+USE_MDFILE_AS_MAINPAGE = ./README.md
+EXT_LINKS_IN_WINDOW = YES
+USE_MATHJAX = YES
+
+# DOT executable related configs
+HAVE_DOT = YES
+CALLER_GRAPH = YES
+CALL_GRAPH = YES
+DOT_IMAGE_FORMAT = svg
+DOT_TRANSPARENT = YES
+INTERACTIVE_SVG = YES
+
+# only show us warnings and errors in log
+QUIET = YES
+
+# LAYOUT_FILE = doxygen-materialized/templates/DoxygenLayout.xml
+
+@INCLUDE = ./docs/doxygen-materialized/doxyfile_overrides.ini

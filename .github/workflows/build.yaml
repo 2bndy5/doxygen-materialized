@@ -1,0 +1,43 @@
+name: Build test docs
+
+on: ['push', 'pull_request']
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+    - name: install dev dependencies
+      run: npm install
+    - name: install Doxygen
+      run: sudo apt-get install doxygen
+    - name: build theme docs
+      run: npm run doxygen
+    - name: save docs artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: doxygen-materialized-docs
+        path: html
+    - name: upload docs to github pages
+      # if: ${{ github.event_name == 'release'}}
+      if: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/main' }}
+      uses: peaceiris/actions-gh-pages@068dc23d9710f1ba62e86896f84735d869951305 # pinned to v3.8.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs/_build/html
+
+  mk_dist:
+    runs-on: ubuntu-latest
+
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+    - name: install dev dependencies
+      run: npm install
+    - name: make distributable assets
+      run: npm run mk_dist
+    - name: save theme dist assets
+      uses: actions/upload-artifact@v2
+      with:
+        name: doxygen-materialized-dist
+        path: dist/doxygen-materialized

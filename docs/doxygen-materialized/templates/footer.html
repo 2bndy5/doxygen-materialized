@@ -1,0 +1,25 @@
+    <!-- HTML footer for doxygen 1.9.1-->
+    <a class="btn-floating" id="scroll-to-top" href="#"><i class="material-icons-round">north</i></a>
+    <!-- start footer part -->
+    <!--BEGIN GENERATE_TREEVIEW-->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+      $navpath
+    </div>
+    <!--END GENERATE_TREEVIEW-->
+    
+    <script type="text/javascript" src="$relpath^materialize.min.js"></script>
+    <script type="text/javascript" src="$relpath^clipboard.min.js"></script>
+    <script type="text/javascript" src="$relpath^theme_footer_script.min.js"></script>
+    <script type="text/javascript">M.AutoInit();</script>
+    <!--BEGIN !GENERATE_TREEVIEW-->
+    <script type="text/javascript">replaceTabbedIndex();</script>
+    <!--END !GENERATE_TREEVIEW-->
+
+    <footer class="page-footer">
+      <div class="container right">
+        $generatedby <a href="https://www.doxygen.org/index.html">Doxygen v$doxygenversion</a>.<br>
+        Using <a href="https://github.com/2bndy5/doxygen-materialized">doxygen-materialized theme from 2bndy5</a>.
+      </div>
+    </footer>
+  </body>
+</html>

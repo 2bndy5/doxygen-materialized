@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- HTML header for doxygen 1.9.1-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen $doxygenversion" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- fetch material design assets -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Icons+TwoTone&family=Material+Icons+Outlined&family=Material+Icons+Round&family=Material+Icons"
+        rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto=mono" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,400;1,500&family=Roboto:ital,wght@0,100;0,400;1,500&display=swap"
+        rel="stylesheet">
+    <!-- end material design assets -->
+
+    <link rel="icon" type="image/x-icon" href="$relpath^favicon.ico">
+
+    <!--BEGIN PROJECT_NAME-->
+    <title>$projectname: $title</title>
+    <!--END PROJECT_NAME-->
+    <!--BEGIN !PROJECT_NAME-->
+    <title>$title</title>
+    <!--END !PROJECT_NAME-->
+    <!-- <link href="$relpath^tabs.css" rel="stylesheet" type="text/css"/> -->
+    <script type="text/javascript" src="$relpath^jquery.js"></script>
+    <script type="text/javascript" src="$relpath^dynsections.js"></script>
+    <!-- $treeview -->
+    $search
+    $mathjax
+    <link href="$relpath^$stylesheet" rel="stylesheet" type="text/css" />
+    $extrastylesheet
+    <!--BEGIN GENERATE_TREEVIEW-->
+    <script type="text/javascript" src="navtreedata.js"></script>
+    <!--END GENERATE_TREEVIEW-->
+    <script type="text/javascript" src="$relpath^theme_header_script.min.js"></script>
+</head>
+
+<body>
+
+    <!--BEGIN TITLEAREA-->
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" data-target="slide-out" class="sidenav-trigger show-on-medium-and-up">
+                <span class="material-icons" style="line-height: unset;">menu</span>
+            </a>
+            <ul id="nav-bar">
+                <!--BEGIN PROJECT_NAME-->
+                <li class="flow-text hide-on-small-only"><span style="padding: 0 15px;">$projectname</span></li>
+                <!--END PROJECT_NAME-->
+                <!--BEGIN PROJECT_NUMBER-->
+                <li class="flow-text hide-on-small-only"><span style="padding: 0 15px;">$projectnumber</span></li>
+                <!--END PROJECT_NUMBER-->
+                <li class="right">
+                    <div class="search-wrapper right" style="display: inline-flex;">
+                        <span class="dropdown-trigger material-icons prefix"
+                            data-target="searchParameters"
+                            style="line-height: unset;">search
+                        </span>
+                        $searchbox
+                        </span>
+                    </div>
+                </li>
+                <li class="right">
+                    <div class="switch">
+                        <label>
+                            <input id="dark-theme-toogle" type="checkbox">
+                            <span class="lever"></span>
+                        </label>
+                    </div>
+                </li>
+            </ul>
+            <!--BEGIN PROJECT_BRIEF-->
+            <span class="hide-on-med-and-down center" style="position: fixed;top: 44px;left: 76px;line-height: initial;">$projectbrief</span>
+            <!--END PROJECT_BRIEF-->
+        </div>
+    </nav>
+
+    <ul id="searchParameters" class="dropdown-content">
+        <!-- Replaced Search parameters dropdown list -->
+        <li onclick="searchBox.OnSelectItem(0)">
+            <p>
+                <label>
+                    <input class="with-gap" name="SelectItems" type="radio" checked />
+                    <span>All</span>
+                </label>
+            </p>
+        </li>
+        <li onclick="searchBox.OnSelectItem(1)">
+            <p>
+                <label>
+                    <input class="with-gap" name="SelectItems" type="radio" />
+                    <span>Classes</span>
+                </label>
+            </p>
+        </li>
+        <li onclick="searchBox.OnSelectItem(2)">
+            <p>
+                <label>
+                    <input class="with-gap" name="SelectItems" type="radio" />
+                    <span>Files</span>
+                </label>
+            </p>
+        </li>
+        <li onclick="searchBox.OnSelectItem(3)">
+            <p>
+                <label>
+                    <input class="with-gap" name="SelectItems" type="radio" />
+                    <span>Functions</span>
+                </label>
+            </p>
+        </li>
+        <li onclick="searchBox.OnSelectItem(4)">
+            <p>
+                <label>
+                    <input class="with-gap" name="SelectItems" type="radio" />
+                    <span>Variables</span>
+                </label>
+            </p>
+        </li>
+        <li onclick="searchBox.OnSelectItem(5)">
+            <p>
+                <label>
+                    <input class="with-gap" name="SelectItems" type="radio" />
+                    <span>Pages</span>
+                </label>
+            </p>
+        </li>
+    </ul>
+
+    <div id="slide-out" class="sidenav">
+        <div class="side-nav-header" style="text-align: center;">
+            <a href="index.html">
+                <!--BEGIN PROJECT_LOGO-->
+                <img alt="Logo" src="$relpath^$projectlogo" />
+                <!--END PROJECT_LOGO-->
+                <div>
+                    <!--BEGIN PROJECT_NAME-->
+                    $projectname
+                    <!--END PROJECT_NAME-->
+                    <!--BEGIN PROJECT_NUMBER-->
+                    $projectnumber
+                    <!--END PROJECT_NUMBER-->
+                </div>
+            </a>
+        </div>
+        <ul class="scroll-wrapper">
+        </ul>
+    </div>
+    <!--END TITLEAREA-->
+
+    <div id="top">
+        <!-- do not remove this div, it is closed by doxygen! -->
+
+        <!-- end header part -->

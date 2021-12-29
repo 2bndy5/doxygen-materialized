@@ -1,0 +1,70 @@
+
+:root {
+  // convenience variables extended to user-customizable CSS
+  --neutral: 50%;
+  --full: 100%;
+  --none: 0%;
+  --lighten-5: 95%;
+  --lighten-4: 86%;
+  --lighten-3: 77%;
+  --lighten-2: 68%;
+  --lighten-1: 59%;
+  --darken-1: 45%;
+  --darken-2: 40%;
+  --darken-3: 35%;
+  --darken-4: 30%;
+  --darken-5: 18%;
+  --highlight-hover: hsla(0, var(--none), var(--neutral), 0.125);
+  --admonition-sat: var(--lighten-4);
+  --admonition-lightness: var(--neutral);
+
+  // variable colors used for light theme (the default)
+  --primary-hue: 220deg;
+  --accent-hue: 140deg;
+  --bg-color: hsl(0, var(--none), var(--full));
+  --text-lightness: var(--none);
+  --text-color: hsl(0, var(--none), var(--none));
+  --text-color-inverted: hsl(0, var(--none), var(--full));
+  --hyperlink-color: hsl(var(--accent-hue), var(--lighten-5), var(--darken-2));
+  --proto-text-color: hsl(var(--primary-hue), var(--darken-1), var(--darken-3));
+  --member-proto-bg-color: hsl(var(--primary-hue), var(--darken-2), var(--lighten-5));
+  --blockquote-bg-color: hsla(0, var(--none), var(--lighten-5), 0.65);
+
+  --code-snippet-bg-color: hsl(0, var(--none), var(--lighten-5));
+  --code-string-literal: hsl(calc(var(--accent-hue) - 51deg), var(--lighten-5), var(--darken-2));
+  --code-char-literal: hsl(calc(var(--accent-hue) - 102deg), var(--lighten-5), var(--darken-2));
+  --code-comment: hsl(calc(var(--accent-hue) - 157deg), var(--lighten-5), var(--darken-2));
+  --code-keyword: hsl(calc(var(--accent-hue) + 51deg), var(--lighten-5), var(--darken-2));
+  --code-keyword-type: hsl(calc(var(--accent-hue) + 102deg), var(--lighten-5), var(--darken-2));
+  --code-keyword-flow: hsl(calc(var(--accent-hue) + 157deg), var(--lighten-5), var(--darken-2));
+
+  --tr-even-bg-color: hsl(var(--primary-hue), var(--darken-3), var(--lighten-5));
+  --deprecated-admonition-color-lightness: var(--darken-4);
+}
+
+// variable colors used for dark theme (default if OS settings prefer dark themed apps)
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="dark"] {
+    --primary-hue: 140deg;
+    --accent-hue: 0deg;
+    --bg-color: hsl(0, var(--none), var(--darken-5));
+    --text-lightness: var(--full);
+    --text-color: hsl(0, var(--none), var(--full));
+    --text-color-inverted: hsl(0, var(--none), var(--none));
+    --hyperlink-color: hsl(var(--accent-hue), var(--lighten-4), var(--lighten-2));
+    --proto-text-color: hsl(var(--primary-hue), var(--lighten-1), var(--lighten-3));
+    --member-proto-bg-color: hsl(var(--primary-hue), var(--darken-4), var(--darken-5));
+    --blockquote-bg-color: hsla(0, var(--none), var(--none), 0.08);
+
+    --code-snippet-bg-color: hsl(0, var(--none), 12%);
+    --code-string-literal: hsl(calc(var(--accent-hue) - 51deg), var(--lighten-4), var(--lighten-2));
+    --code-char-literal: hsl(calc(var(--accent-hue) - 102deg), var(--lighten-4), var(--lighten-2));
+    --code-comment: hsl(calc(var(--accent-hue) - 157deg), var(--lighten-4), var(--lighten-2));
+    --code-keyword: hsl(calc(var(--accent-hue) + 51deg), var(--lighten-4), var(--lighten-2));
+    --code-keyword-type: hsl(calc(var(--accent-hue) + 102deg), var(--lighten-4), var(--lighten-2));
+    --code-keyword-flow: hsl(calc(var(--accent-hue) + 157deg), var(--lighten-4), var(--lighten-2));
+
+    --tr-even-bg-color: hsl(var(--primary-hue), var(--darken-3), var(--darken-5));
+    --deprecated-admonition-color-lightness: var(--lighten-3);
+  }
+}

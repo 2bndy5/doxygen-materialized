@@ -1,0 +1,33 @@
+{
+  "name": "doxygen-materialized",
+  "version": "0.1.0",
+  "description": "adaptation of doxygen html output using material design",
+  "main": "index.js",
+  "scripts": {
+    "sass": "npx sass --load-path=./node_modules/@materializecss/materialize/sass --quiet-deps --style=compressed ./src/sass/doxygen-custom.scss docs/doxygen-materialized/css/theme.min.css",
+    "copy_dists": "run-script-os",
+    "copy_dists:win32": "xcopy .\\node_modules\\@materializecss\\materialize\\dist\\js\\materialize.min.js .\\docs\\doxygen-materialized\\js\\materialize.min.js /Y && xcopy .\\node_modules\\clipboard\\dist\\clipboard.min.js .\\docs\\doxygen-materialized\\js\\clipboard.min.js /Y",
+    "copy_dists:linux:darwin": "cp ./node_modules/@materializecss/materialize/dist/js/materialize.min.js ./docs/doxygen-materialized/js/materialize.min.js && cp ./node_modules/clipboard/dist/clipboard.min.js ./docs/doxygen-materialized/js/clipboard.min.js",
+    "minify_js": "npx uglifyjs ./src/js/footer_scripts/*.js -o docs/doxygen-materialized/js/theme_footer_script.min.js --source-map && npx uglifyjs ./src/js/header_scripts/*.js -o docs/doxygen-materialized/js/theme_header_script.min.js --source-map",
+    "build": "npm run sass && npm run minify_js && npm run copy_dists",
+    "doxygen": "npm run build && doxygen docs/Doxyfile",
+    "cp_build_to_dist": "run-script-os",
+    "cp_build_to_dist:win32": "robocopy .\\docs\\doxygen-materialized\\ .\\dist\\doxygen-materialized\\ /S /XF .git-keep",
+    "cp_build_to_dist:linux:darwin": "rsync -r ./docs/doxygen-materialized ./dist --exclude=.git-keep",
+    "mk_dist": "npm run build && npm run cp_build_to_dist"
+  },
+  "keywords": [
+    "doxygen",
+    "material",
+    "design"
+  ],
+  "author": "2bndy5",
+  "license": "MIT",
+  "devDependencies": {
+    "@materializecss/materialize": "^1.1.0-alpha",
+    "clipboard": "^2.0.8",
+    "run-script-os": "^1.1.6",
+    "sass": "^1.45.1",
+    "uglify-js": "^3.14.5"
+  }
+}

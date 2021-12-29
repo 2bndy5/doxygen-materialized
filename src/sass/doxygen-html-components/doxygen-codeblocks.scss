@@ -1,0 +1,163 @@
+@use 'materialize';
+@use "theme-variables";
+
+
+.fragment {
+  overflow-x: hidden;
+  background-color: var(--code-snippet-bg-color);
+  padding: 0.2rem;
+  border-radius: 0.2rem;
+
+  table {
+    padding: 0 5px;
+    margin: 5px 0;
+    display: block;
+
+    tbody {
+      display: block;
+    }
+
+    tr {
+      border-bottom: 0;
+      display: flex;
+      overflow: hidden;
+    }
+
+    td {
+      padding: 0;
+      display: block;
+
+      &.line-numbers {
+        border-right: 1px solid hsla(0, var(--none), var(--text-lightness), 0.25);
+        display: inline-table;
+        text-align: right;
+
+        pre {
+          padding-right: 5px;
+        }
+      }
+
+      pre {
+        code {
+          text-align: left;
+          padding-left: 5px;
+          display: block;
+        }
+
+        &:hover .copy-code-btn {
+          color: var(--text-color);
+        }
+
+        .copy-code-btn {
+          height: 24px;
+          width: 24px;
+          color: var(--highlight-hover);
+          padding: 0;
+          right: 0;
+          top: 0;
+          position: absolute;
+          overflow: hidden;
+          text-overflow: clip;
+
+          &:hover {
+            color: hsl(var(--primary-hue), var(--full), var(--neutral));
+          }
+
+          .material-icons {
+            font-size: 24px;
+          }
+        }
+      }
+
+      &:last-child {
+        width: 100%;
+        overflow-x: auto;
+        scrollbar-width: thin;
+        &:hover {
+          scrollbar-color: hsl(var(--primary-hue), var(--neutral), var(--neutral)) transparent;
+        }
+      }
+    }
+  }
+
+  pre {
+    padding: 2px 0;
+    margin: 0;
+    position: relative;
+  }
+}
+
+:not(.fragment) code {
+  background-color: var(--code-snippet-bg-color);
+  padding: 0 4px;
+  border-radius: 4px;
+}
+
+code span {
+  &.comment {
+    color: var(--code-comment);
+  }
+  &.stringliteral {
+    color: var(--code-string-literal);
+  }
+  &.keyword {
+    color: var(--code-keyword);
+  }
+  &.keywordtype {
+    color: var(--code-keyword-type);
+  }
+  &.keywordflow {
+    color: var(--code-keyword-flow);
+  }
+  &.charliteral {
+    color: var(--code-char-literal);
+  }
+}
+
+
+/* tooltip related style info */
+
+.ttc {
+  display: none;
+}
+
+#powerTip {
+  @extend .card-panel;
+  @extend .hoverable;
+  cursor: default;
+  white-space: nowrap;
+  border: 1px solid var(--text-color);
+  display: none;
+  max-width: 80%;
+  position: absolute;
+  z-index: 2147483647;
+  opacity: 1;
+  background-color: var(--bg-color);
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    margin: 0px;
+  }
+
+  div {
+    margin: 0px;
+    padding: 0px;
+
+    &.ttdeci {
+      font-family: "Roboto Mono", monospace;
+      color: var(--code-comment);
+    }
+
+    &.ttname a,
+    &.ttname {
+      font-weight: bold;
+    }
+
+    &.ttdoc {
+      color: var(--text-color);
+      font-style: italic;
+    }
+  }
+}

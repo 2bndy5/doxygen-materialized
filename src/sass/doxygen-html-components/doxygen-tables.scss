@@ -1,0 +1,114 @@
+@use 'materialize';
+@use 'theme-variables';
+
+table.doxtable,
+table.markdownTable {
+  @extend .container;
+  // margin: 0;
+  
+  tr {
+    transition: background-color .25s ease;
+    &:hover {
+      background-color: var(--highlight-hover);
+    }
+  }
+
+  th {
+    background-color: hsl(var(--primary-hue), var(--darken-2), var(--darken-1));
+    color: var(--text-color-inverted);
+  }
+
+  td, th {
+    border-radius: 0;
+  }
+
+  td.markdownTableBodyRight,
+  th.markdownTableHeadRight {
+    text-align: right;
+  }
+  td.markdownTableBodyLeft,
+  th.markdownTableHeadLeft {
+    text-align: left;
+  }
+  td.markdownTableBodyCenter,
+  th.markdownTableHeadCenter {
+    text-align: center;
+  }
+}
+
+/* doxygen uses table for API members' declaration and documented API member definitions. */
+
+.memberdecls {
+  width: auto;
+  margin-top: 10px;
+
+  .memItemLeft {
+    text-align: right;
+  }
+  .heading {
+    background-color: hsl(var(--primary-hue), var(--darken-1), var(--darken-2));
+  }
+
+  .groupHeader {
+    color: hsl(var(--primary-hue), var(--darken-2), var(--darken-3));
+    @extend .flow-text;
+  }
+
+  .ititle p,
+  .groupText p {
+    padding-left: 2rem;
+  }
+  
+  .ititle p {
+    margin: 0;
+  }
+
+  .groupText p {
+    margin-bottom: 0;
+  }
+
+  details {
+    
+    summary {
+      display: inline;
+      
+      &::before {
+        font-family: "Material Icons";
+        vertical-align: middle;
+        font-size: 24px;
+        margin-right: 5px;
+      }
+    }
+
+    &[open] summary::before {
+      content: "expand_less";
+    }
+
+    &:not([open]) summary::before {
+      content: "expand_more";
+    }
+  }
+}
+
+.groupheader {
+  color: hsl(var(--primary-hue), var(--darken-2), var(--darken-3));
+}
+
+table {
+  &.directory,
+  tr.entry {
+    line-height: 1.5rem;
+  }
+}
+
+div.directory {
+  border: 0;
+
+  .levels {
+    font-size: inherit;
+
+    span {
+      color: hsl(var(--accent-hue), var(--darken-1), var(--darken-2));
+    }
+  }
+}
