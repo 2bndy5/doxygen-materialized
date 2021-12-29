@@ -10,8 +10,8 @@ jobs:
     - uses: actions/setup-node@v2
     - name: install dev dependencies
       run: npm install
-    - name: install Doxygen
-      run: sudo apt-get install doxygen
+    - name: install Doxygen and graphviz
+      run: sudo apt-get install doxygen graphviz
     - name: build theme docs
       run: npm run doxygen
     - name: save docs artifacts
