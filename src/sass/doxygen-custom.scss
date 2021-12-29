@@ -92,6 +92,10 @@ hr {
   color: var(--text-color);
   background-color: var(--bg-color);
   width: max-content;
+
+  &:focus {
+    box-shadow: none;
+  }
 }
 
 #MSearchCloseImg {
@@ -100,12 +104,23 @@ hr {
   padding: 0;
 }
 
+#MSearchClose {
+  top: -3px;
+  margin: 0;
+  color: var(--text-color-inverted);
+}
+
+.right #MSearchClose {
+  right: 0;
+}
+
 #MSearchField {
   padding: 10px;
-  background-color: hsl(var(--primary-hue), 50%, 26%);
+  background: hsl(var(--primary-hue), 50%, 26%);
   border: 1px solid hsl(var(--primary-hue), 25%, 20%);
   margin-left: 6px;
   border-radius: 0.25rem;
+  font-size: 14px;
 }
 
 [type="radio"]:checked+span::after,

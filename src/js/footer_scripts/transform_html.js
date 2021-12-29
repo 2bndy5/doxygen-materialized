@@ -8,6 +8,21 @@ function navScrollOffset() {
 }
 window.addEventListener("hashchange", navScrollOffset);
  */
+/**
+ * Doxygen's Search field uses elements whose class names collide with materialize-css
+ * framework (because they're not very descriptive).
+ * 
+ * Thus we'll replace the class names with more suitable descriptive names that don't
+ * interfere with using materialize-css framework's class names.
+ */
+function modifySearchBar() {
+    let divSearch = document.getElementById("MSearchBox");
+    let right = divSearch.getElementsByClassName("right")[0];
+    let left = divSearch.getElementsByClassName("left")[0];
+    right.classList.replace("right", "search-right");
+    left.classList.replace("left", "search-left");
+}
+modifySearchBar();
 
 /**
  * For reasons unknown the breadcrumb element (id: nav-path) is located in the footer when
