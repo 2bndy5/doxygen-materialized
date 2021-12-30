@@ -6,7 +6,7 @@ jobs:
   build_docs:
     strategy:
       matrix:
-        - doxygen: ['1.9.1']
+        doxygen: ['1.9.1']
 
     runs-on: ubuntu-latest
     steps:
