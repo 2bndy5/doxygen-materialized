@@ -8,10 +8,23 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v2
-    - name: install dev dependencies
+    - name: install theme dev deps
       run: npm install
-    - name: install Doxygen and graphviz
-      run: sudo apt-get install doxygen graphviz
+    - name: install Doxygen src deps and graphviz
+      # flex, bison, make, cmake, and python already come with ubuntu-latest
+      run: sudo apt-get install libiconv graphviz
+    - name: checkout doxygen src
+      uses: actions/checkout@v2
+      with:
+        path: doxygen
+        repository: 'doxygen/doxygen'
+        ref: 'Release_1_9_1'
+    - name: build doxygen from src
+      working-directory: doxygen
+      run: |
+        mkdir build && cd build
+        cmake -G "Unix Makefiles" .. && make
+        sudo make install
     - name: build theme docs
       run: npm run doxygen
     - name: save docs artifacts
