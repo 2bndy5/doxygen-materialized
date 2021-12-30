@@ -17,8 +17,8 @@ jobs:
     - name: install graphviz and libclang deps
       run: sudo apt-get install graphviz libclang1-9 libclang-cpp9
     - name: get doxygen from SF binary archives
-      working-directory: doxygen
       run: |
+        mkdir doxygen && cd doxygen
         curl -L https://sourceforge.net/projects/doxygen/files/rel-${{ matrix.doxygen }}/doxygen-${{ matrix.doxygen }}.linux.bin.tar.gz > doxygen.tar.gz
         gunzip doxygen.tar.gz
         tar xf doxygen.tar
