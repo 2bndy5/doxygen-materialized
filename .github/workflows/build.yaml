@@ -10,9 +10,8 @@ jobs:
     - uses: actions/setup-node@v2
     - name: install theme dev deps
       run: npm install
-    - name: install Doxygen src deps and graphviz
-      # flex, bison, make, cmake, and python already come with ubuntu-latest
-      run: sudo apt-get install libiconv graphviz
+    - name: install graphviz
+      run: sudo apt-get install graphviz
     - name: checkout doxygen src
       uses: actions/checkout@v2
       with:
@@ -21,6 +20,8 @@ jobs:
         ref: 'Release_1_9_1'
     - name: build doxygen from src
       working-directory: doxygen
+      # deps flex, bison, make, cmake, and python already come with ubuntu-latest
+      # dep libiconv seems only specific to language translations
       run: |
         mkdir build && cd build
         cmake -G "Unix Makefiles" .. && make
