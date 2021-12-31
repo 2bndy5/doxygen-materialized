@@ -1,0 +1,63 @@
+@use 'materialize';
+@use 'theme-variables';
+
+nav {
+  background-color: hsl(var(--primary-hue), 85%, 30%);
+  color: var(--text-color-inverted);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+  img#MSearchSelect {
+    display: none;
+  }
+
+  .sidenav-trigger {
+    color: var(--text-color-inverted);
+  }
+
+  .dropdown-trigger:hover,
+  .sidenav-trigger:hover {
+    color: var(--code-comment);
+  }
+
+  a,
+  a:visited,
+  a:hover {
+    color: var(--text-color-inverted);
+  }
+
+  .color-switch {
+    padding: 0 15px;
+
+    label {
+      color: var(--text-color-inverted);
+
+      .material-icons {
+        cursor: pointer;
+        // font-size: 32px;
+      }
+    }
+
+    input[type="checkbox"]:not(:checked) + label>i {
+        font-family: "Material Icons Outlined";
+    }
+  }
+}
+
+#main-nav {
+  display: none;
+}
+
+#nav-path {
+  padding-left: 1rem;
+  z-index: 0;
+  color: var(--text-color-inverted);
+
+  a,
+  a:visited,
+  a:hover,
+  a:before {
+    color: var(--text-color-inverted);
+  }
+}

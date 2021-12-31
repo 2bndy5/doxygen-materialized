@@ -1,0 +1,180 @@
+@use 'materialize';
+@use 'theme-variables';
+
+.header,
+.contents {
+  margin: 0 1rem;
+
+}
+
+.directory {
+  
+  .row {
+    padding: 15px 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid hsla(0, var(--none), var(--none), 0.25);
+  
+    span.arrow {
+      cursor: pointer;
+      vertical-align: middle;
+      display: inline;
+    }
+
+    &:hover {
+      background-color: var(--highlight-hover);
+    }
+  }
+
+  .levels {
+    text-align: right;
+
+    li {
+      cursor: pointer;
+      margin: 0 5px;
+      border: 1px solid var(--hyperlink-color);
+      vertical-align: inherit;
+
+      a, a:hover {
+        color: var(--text-color);
+      }
+    }
+  }
+}
+
+.classindex dl.odd {
+  background-color: var(--tr-even-bg-color);
+}
+
+.dynheader {
+	padding-top: 15px;
+}
+
+div.dyncontent {
+  img {
+    background-color: white;
+  }
+
+  span.legend {
+    font-size: 100%;
+  }
+}
+
+.alphachar a {
+  color: var(--text-color);
+}
+
+h2 {
+  @extend .flow-text;
+
+  @media screen and (min-width: 1200px) {
+    font-size: 2.5rem;
+  }
+
+}
+
+h3 {
+  @extend .flow-text;
+
+  @media screen and (min-width: 1200px) {
+    font-size: 2rem;
+  }
+}
+
+h1,
+.headertitle .title {
+  @extend .flow-text;
+}
+
+blockquote {
+  background-color: var(--blockquote-bg-color);
+  border-top-left-radius: 0.1rem;
+  border-bottom-left-radius: 0.1rem;
+  border-color: hsl(var(--accent-hue), var(--darken-4), var(--lighten-3));
+}
+
+.memberdecls {
+  div.row {
+    border-bottom: 1px solid hsl(0, 0%, 0%, 0.25);
+  }
+
+  .row {
+    margin: 0.6rem 0;
+    padding-bottom: 0.6rem;
+  }
+}
+
+.icon,
+.mlabel {
+  padding: 0 0.5rem;
+  margin: auto 0.5rem;
+  border-radius: 0.5rem;
+  background-color: hsl(var(--primary-hue), var(--darken-2), var(--lighten-1));
+  color: var(--text-color-inverted);
+  display: inline;
+  font-size: 1rem;
+  line-height: 22px;
+  height: 22px;
+}
+
+.memtitle {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.7rem;
+
+  .permalink {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.definition {
+  padding-top: 15px;
+}
+
+.memproto,
+dl.reflist dt {
+  color: var(--proto-text-color);
+  border-color: hsl(var(--primary-hue), var(--darken-3), var(--lighten-3));
+  background-color: var(--member-proto-bg-color);
+}
+
+.memtemplate {
+  color: hsl(var(--primary-hue), var(--darken-2), var(--darken-1));
+}
+
+.memname {
+  width: fit-content;
+}
+
+.memdoc {
+  margin: 0 1.5rem;
+}
+
+.memname {
+  border-collapse: unset;
+
+  tbody {
+    line-height: initial;
+  }
+
+  td {
+    padding: 2px 2px;
+  }
+}
+
+div.summary {
+  // width: unset;
+  float: right;
+}
+
+.paramname {
+  color: var(--code-comment);
+
+  code {
+    color: var(--text-color);
+  }
+}

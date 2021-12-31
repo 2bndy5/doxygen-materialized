@@ -31,14 +31,17 @@
     <!-- <link href="$relpath^tabs.css" rel="stylesheet" type="text/css"/> -->
     <script type="text/javascript" src="$relpath^jquery.js"></script>
     <script type="text/javascript" src="$relpath^dynsections.js"></script>
-    <!-- $treeview -->
-    $search
+    <!-- $ treeview -->
+    <!-- $ search -->
+    <script type="text/javascript" src="search/searchdata.js"></script>
+    <script type="text/javascript" src="search/search.js"></script>
     $mathjax
     <link href="$relpath^$stylesheet" rel="stylesheet" type="text/css" />
     $extrastylesheet
     <!--BEGIN GENERATE_TREEVIEW-->
     <script type="text/javascript" src="navtreedata.js"></script>
     <!--END GENERATE_TREEVIEW-->
+    <script type="text/javascript" src="$relpath^materialize.min.js"></script>
     <script type="text/javascript" src="$relpath^theme_header_script.min.js"></script>
 </head>
 
@@ -59,79 +62,48 @@
                 <!--END PROJECT_NUMBER-->
                 <li class="right">
                     <div class="search-wrapper right" style="display: inline-flex;">
-                        <span class="dropdown-trigger material-icons prefix"
-                            data-target="searchParameters"
+                        <span class="dropdown-trigger material-icons prefix no-autoinit" data-target="searchParameters"
                             style="line-height: unset;">search
                         </span>
                         $searchbox
+                        <!-- 
+                            <div id="MSearchBox" class="MSearchBoxInactive">
+                                <span class="left">
+                                <img id="MSearchSelect" src="search/mag_sel.svg"
+                                    onmouseover="return searchBox.OnSearchSelectShow()"
+                                    onmouseout="return searchBox.OnSearchSelectHide()"
+                                    alt=""/>
+                                <input type="text" id="MSearchField" value="Search" accesskey="S"
+                                    onfocus="searchBox.OnSearchFieldFocus(true)" 
+                                    onblur="searchBox.OnSearchFieldFocus(false)" 
+                                    onkeyup="searchBox.OnSearchFieldChange(event)"/>
+                                </span><span class="right">
+                                    <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+                                </span>
+                            </div>
+                         -->
                         </span>
                     </div>
                 </li>
                 <li class="right">
-                    <div class="switch">
-                        <label>
-                            <input id="dark-theme-toogle" type="checkbox">
-                            <span class="lever"></span>
+                    <div class="color-switch">
+                        <input id="dark-theme-toggle" type="checkbox">
+                        <label for="dark-theme-toggle" class="tooltipped" data-position="left"
+                            data-tooltip="toggle light/dark theme">
+                            <i class="material-icons">lightbulb</i>
                         </label>
                     </div>
                 </li>
             </ul>
             <!--BEGIN PROJECT_BRIEF-->
-            <span class="hide-on-med-and-down center" style="position: fixed;top: 44px;left: 76px;line-height: initial;">$projectbrief</span>
+            <span class="hide-on-med-and-down center"
+                style="position: fixed;top: 44px;left: 76px;line-height: initial;">$projectbrief</span>
             <!--END PROJECT_BRIEF-->
         </div>
     </nav>
 
     <ul id="searchParameters" class="dropdown-content">
-        <!-- Replaced Search parameters dropdown list -->
-        <li onclick="searchBox.OnSelectItem(0)">
-            <p>
-                <label>
-                    <input class="with-gap" name="SelectItems" type="radio" checked />
-                    <span>All</span>
-                </label>
-            </p>
-        </li>
-        <li onclick="searchBox.OnSelectItem(1)">
-            <p>
-                <label>
-                    <input class="with-gap" name="SelectItems" type="radio" />
-                    <span>Classes</span>
-                </label>
-            </p>
-        </li>
-        <li onclick="searchBox.OnSelectItem(2)">
-            <p>
-                <label>
-                    <input class="with-gap" name="SelectItems" type="radio" />
-                    <span>Files</span>
-                </label>
-            </p>
-        </li>
-        <li onclick="searchBox.OnSelectItem(3)">
-            <p>
-                <label>
-                    <input class="with-gap" name="SelectItems" type="radio" />
-                    <span>Functions</span>
-                </label>
-            </p>
-        </li>
-        <li onclick="searchBox.OnSelectItem(4)">
-            <p>
-                <label>
-                    <input class="with-gap" name="SelectItems" type="radio" />
-                    <span>Variables</span>
-                </label>
-            </p>
-        </li>
-        <li onclick="searchBox.OnSelectItem(5)">
-            <p>
-                <label>
-                    <input class="with-gap" name="SelectItems" type="radio" />
-                    <span>Pages</span>
-                </label>
-            </p>
-        </li>
+        <!-- Replaced Search parameters dropdown list (populated by `init_search()`) -->
     </ul>
 
     <div id="slide-out" class="sidenav">

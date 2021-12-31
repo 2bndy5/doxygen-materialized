@@ -26,6 +26,7 @@
   "devDependencies": {
     "@materializecss/materialize": "^1.1.0-alpha",
     "clipboard": "^2.0.8",
+    "eslint": "^8.5.0",
     "run-script-os": "^1.1.6",
     "sass": "^1.45.1",
     "uglify-js": "^3.14.5"
