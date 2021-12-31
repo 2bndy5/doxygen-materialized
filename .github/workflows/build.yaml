@@ -34,7 +34,7 @@ jobs:
           path: html
       - name: upload docs to github pages
         # if: ${{ github.event_name == 'release'}}
-        if: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && matrix.doxygen == 1.9.3 }}
+        if: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && matrix.doxygen == '1.9.3' }}
         uses: peaceiris/actions-gh-pages@068dc23d9710f1ba62e86896f84735d869951305 # pinned to v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

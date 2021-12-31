@@ -15,3 +15,4 @@ xml/
 **/doxygen-materialized/css/*
 dist/doxygen-materialized/
 !**/.git-keep
+.vscode/
