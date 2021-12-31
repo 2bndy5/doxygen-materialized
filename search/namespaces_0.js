@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['inheritencenamespace_29',['InheritenceNamespace',['../namespaceInheritenceNamespace.html',1,'']]]
+  ['inheritencenamespace_0',['InheritenceNamespace',['../namespaceInheritenceNamespace.html',1,'']]]
 ];

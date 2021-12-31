@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=9" />
-    <meta name="generator" content="Doxygen 1.9.1" />
+    <meta name="generator" content="Doxygen 1.9.3" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- fetch material design assets -->
     <link
@@ -22,23 +22,19 @@
     <!-- <link href="tabs.css" rel="stylesheet" type="text/css"/> -->
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="dynsections.js"></script>
-    <!-- <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
- -->
-    <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
+    <!-- $ treeview -->
+    <!-- $ search -->
+    <script type="text/javascript" src="search/searchdata.js"></script>
+    <script type="text/javascript" src="search/search.js"></script>
     <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX","output/HTML-CSS"],
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
     <link href="theme.min.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="navtreedata.js"></script>
+    <script type="text/javascript" src="materialize.min.js"></script>
     <script type="text/javascript" src="theme_header_script.min.js"></script>
 </head>
 <body>
@@ -52,8 +48,7 @@
                 <li class="flow-text hide-on-small-only"><span style="padding: 0 15px;">v0.1.0</span></li>
                 <li class="right">
                     <div class="search-wrapper right" style="display: inline-flex;">
-                        <span class="dropdown-trigger material-icons prefix"
-                            data-target="searchParameters"
+                        <span class="dropdown-trigger material-icons prefix no-autoinit" data-target="searchParameters"
                             style="line-height: unset;">search
                         </span>
                                 <div id="MSearchBox" class="MSearchBoxInactive">
@@ -70,71 +65,41 @@
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
           </span>
         </div>
+                        <!-- 
+                            <div id="MSearchBox" class="MSearchBoxInactive">
+                                <span class="left">
+                                <img id="MSearchSelect" src="search/mag_sel.svg"
+                                    onmouseover="return searchBox.OnSearchSelectShow()"
+                                    onmouseout="return searchBox.OnSearchSelectHide()"
+                                    alt=""/>
+                                <input type="text" id="MSearchField" value="Search" accesskey="S"
+                                    onfocus="searchBox.OnSearchFieldFocus(true)" 
+                                    onblur="searchBox.OnSearchFieldFocus(false)" 
+                                    onkeyup="searchBox.OnSearchFieldChange(event)"/>
+                                </span><span class="right">
+                                    <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+                                </span>
+                            </div>
+                         -->
                         </span>
                     </div>
                 </li>
                 <li class="right">
-                    <div class="switch">
-                        <label>
-                            <input id="dark-theme-toogle" type="checkbox">
-                            <span class="lever"></span>
+                    <div class="color-switch">
+                        <input id="dark-theme-toggle" type="checkbox">
+                        <label for="dark-theme-toggle" class="tooltipped" data-position="left"
+                            data-tooltip="toggle light/dark theme">
+                            <i class="material-icons">lightbulb</i>
                         </label>
                     </div>
                 </li>
             </ul>
-            <span class="hide-on-med-and-down center" style="position: fixed;top: 44px;left: 76px;line-height: initial;">A theme for Doxygen html output using the materialize-css framework</span>
+            <span class="hide-on-med-and-down center"
+                style="position: fixed;top: 44px;left: 76px;line-height: initial;">A theme for Doxygen html output using the materialize-css framework</span>
         </div>
     </nav>
     <ul id="searchParameters" class="dropdown-content">
-        <!-- Replaced Search parameters dropdown list -->
-        <li onclick="searchBox.OnSelectItem(0)">
-            <p>
-                <label>
-                    <input class="with-gap" name="SelectItems" type="radio" checked />
-                    <span>All</span>
-                </label>
-            </p>
-        </li>
-        <li onclick="searchBox.OnSelectItem(1)">
-            <p>
-                <label>
-                    <input class="with-gap" name="SelectItems" type="radio" />
-                    <span>Classes</span>
-                </label>
-            </p>
-        </li>
-        <li onclick="searchBox.OnSelectItem(2)">
-            <p>
-                <label>
-                    <input class="with-gap" name="SelectItems" type="radio" />
-                    <span>Files</span>
-                </label>
-            </p>
-        </li>
-        <li onclick="searchBox.OnSelectItem(3)">
-            <p>
-                <label>
-                    <input class="with-gap" name="SelectItems" type="radio" />
-                    <span>Functions</span>
-                </label>
-            </p>
-        </li>
-        <li onclick="searchBox.OnSelectItem(4)">
-            <p>
-                <label>
-                    <input class="with-gap" name="SelectItems" type="radio" />
-                    <span>Variables</span>
-                </label>
-            </p>
-        </li>
-        <li onclick="searchBox.OnSelectItem(5)">
-            <p>
-                <label>
-                    <input class="with-gap" name="SelectItems" type="radio" />
-                    <span>Pages</span>
-                </label>
-            </p>
-        </li>
+        <!-- Replaced Search parameters dropdown list (populated by `init_search()`) -->
     </ul>
     <div id="slide-out" class="sidenav">
         <div class="side-nav-header" style="text-align: center;">
@@ -151,39 +116,23 @@
     </div>
     <div id="top">
         <!-- do not remove this div, it is closed by doxygen! -->
-        <!-- end header part --><!-- Generated by Doxygen 1.9.1 -->
+        <!-- end header part --><!-- Generated by Doxygen 1.9.3 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 /* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
   initMenu('',true,false,'search.php','Search');
   $(document).ready(function() { init_search(); });
 });
-/* @license-end */</script>
-<div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('TestLib_8h_source.html',''); initResizable(); });
 /* @license-end */
 </script>
-<div id="doc-content">
+<div id="main-nav"></div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -198,69 +147,73 @@ $(document).ready(function(){initNavTree('TestLib_8h_source.html',''); initResiz
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_9bd322c253a2886b3cf29f79d0833a82.html">test_src</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
-  <div class="headertitle">
-<div class="title">TestLib.h</div>  </div>
+  <div class="headertitle"><div class="title">TestLib.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="TestLib_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="namespaceInheritenceNamespace.html">   19</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceInheritenceNamespace.html">InheritenceNamespace</a> {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classInheritenceNamespace_1_1AbstractClass.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="classInheritenceNamespace_1_1AbstractClass.html">AbstractClass</a> {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classInheritenceNamespace_1_1AbstractClass.html#ac95d04c37a6d00ef76a161166733ad02">   27</a></span>&#160;    <a class="code" href="classInheritenceNamespace_1_1AbstractClass.html#ac95d04c37a6d00ef76a161166733ad02">AbstractClass</a>() : <a class="code" href="classInheritenceNamespace_1_1AbstractClass.html#a054b565d4d0ba67c5350a187ab47cbca">parentVar</a>(false) {};</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classInheritenceNamespace_1_1AbstractClass.html#a0373ad3726b92feb0933cb3a7bf369ea">   36</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classInheritenceNamespace_1_1AbstractClass.html#a0373ad3726b92feb0933cb3a7bf369ea">morphMe</a>() = 0;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classInheritenceNamespace_1_1AbstractClass.html#a054b565d4d0ba67c5350a187ab47cbca">   49</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classInheritenceNamespace_1_1AbstractClass.html#a054b565d4d0ba67c5350a187ab47cbca">parentVar</a>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classInheritenceNamespace_1_1AbstractClass.html#a8a8a4c06281f4d84820df074bd9ea507">   58</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classInheritenceNamespace_1_1AbstractClass.html#a8a8a4c06281f4d84820df074bd9ea507">has_code</a>(<span class="keywordtype">bool</span> nonop = <span class="keyword">false</span>) { <span class="keywordflow">return</span> nonop; }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;};</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="structInheritenceNamespace_1_1TestClass.html">   63</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structInheritenceNamespace_1_1TestClass.html">TestClass</a> : <span class="keyword">public</span> <a class="code" href="classInheritenceNamespace_1_1AbstractClass.html">AbstractClass</a> {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="structInheritenceNamespace_1_1TestClass.html#a40d9e4cc0f4214150620c14a65ddd224">   70</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structInheritenceNamespace_1_1TestClass.html#a40d9e4cc0f4214150620c14a65ddd224">morphMe</a>(uint16_t var, <span class="keywordtype">bool</span> nonop) {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="structInheritenceNamespace_1_1TestClass.html#a4f3be9e96fd1afb6c268e847e916ea4d">myVar</a> = var; <span class="comment">// should probably initialize this in c&#39;tor properly</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classInheritenceNamespace_1_1AbstractClass.html#a8a8a4c06281f4d84820df074bd9ea507">has_code</a>(nonop)) {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <a class="code" href="classInheritenceNamespace_1_1AbstractClass.html#a054b565d4d0ba67c5350a187ab47cbca">parentVar</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <a class="code" href="structInheritenceNamespace_1_1TestClass.html#a4f3be9e96fd1afb6c268e847e916ea4d">myVar</a>++;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    </div>
-<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="structInheritenceNamespace_1_1TestClass.html#a4f3be9e96fd1afb6c268e847e916ea4d">   83</a></span>&#160;    uint8_t <a class="code" href="structInheritenceNamespace_1_1TestClass.html#a4f3be9e96fd1afb6c268e847e916ea4d">myVar</a>;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;};</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="namespacetemplateNamespace.html">   92</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacetemplateNamespace.html">templateNamespace</a> {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> R&gt;</div>
-<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classtemplateNamespace_1_1TemplateClass.html">  100</a></span>&#160;<span class="keyword">class </span><a class="code" href="classtemplateNamespace_1_1TemplateClass.html">TemplateClass</a> {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="classtemplateNamespace_1_1TemplateClass.html#a354cfb802ba9894214d9c0cdecb4daf0">  108</a></span>&#160;    <a class="code" href="classtemplateNamespace_1_1TemplateClass.html#a354cfb802ba9894214d9c0cdecb4daf0">TemplateClass</a>(T var_1, R var_2) : <a class="code" href="classtemplateNamespace_1_1TemplateClass.html#ae4cc7bc5b249245c7df8d672f8049d94">var1</a>(var_1), <a class="code" href="classtemplateNamespace_1_1TemplateClass.html#a970c8061f66cd26fe3e794da444eaf47">var2</a>(var_2) {}</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="classtemplateNamespace_1_1TemplateClass.html#a18dab0250d3d4e4f0218517998ae5916">  114</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtemplateNamespace_1_1TemplateClass.html#a18dab0250d3d4e4f0218517998ae5916">test</a>(T check);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="classtemplateNamespace_1_1TemplateClass.html#a467eb9e456d5920e041f700b076d7e3c">  120</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtemplateNamespace_1_1TemplateClass.html#a467eb9e456d5920e041f700b076d7e3c">test</a>(R check);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="classtemplateNamespace_1_1TemplateClass.html#ae4cc7bc5b249245c7df8d672f8049d94">  124</a></span>&#160;    T <a class="code" href="classtemplateNamespace_1_1TemplateClass.html#ae4cc7bc5b249245c7df8d672f8049d94">var1</a>;</div>
-<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="classtemplateNamespace_1_1TemplateClass.html#a970c8061f66cd26fe3e794da444eaf47">  126</a></span>&#160;    R <a class="code" href="classtemplateNamespace_1_1TemplateClass.html#a970c8061f66cd26fe3e794da444eaf47">var2</a>;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;};</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="keyword">extern</span> <a class="code" href="classtemplateNamespace_1_1TemplateClass.html">TemplateClass</a> <a class="code" href="namespacetemplateNamespace.html#a6c47c8a13a01b685defd39214746eacc">quickStarter</a> = <a class="code" href="classtemplateNamespace_1_1TemplateClass.html">TemplateClass&lt;int, bool&gt;</a>(1, 0);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
+<a href="TestLib_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespaceInheritenceNamespace.html">   19</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceInheritenceNamespace.html">InheritenceNamespace</a> {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classInheritenceNamespace_1_1AbstractClass.html">   22</a></span><span class="keyword">class </span><a class="code hl_class" href="classInheritenceNamespace_1_1AbstractClass.html">AbstractClass</a> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classInheritenceNamespace_1_1AbstractClass.html#ac95d04c37a6d00ef76a161166733ad02">   27</a></span>    <a class="code hl_function" href="classInheritenceNamespace_1_1AbstractClass.html#ac95d04c37a6d00ef76a161166733ad02">AbstractClass</a>() : <a class="code hl_variable" href="classInheritenceNamespace_1_1AbstractClass.html#a054b565d4d0ba67c5350a187ab47cbca">parentVar</a>(false) {};</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classInheritenceNamespace_1_1AbstractClass.html#a0373ad3726b92feb0933cb3a7bf369ea">   36</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classInheritenceNamespace_1_1AbstractClass.html#a0373ad3726b92feb0933cb3a7bf369ea">morphMe</a>() = 0;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classInheritenceNamespace_1_1AbstractClass.html#a054b565d4d0ba67c5350a187ab47cbca">   49</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="classInheritenceNamespace_1_1AbstractClass.html#a054b565d4d0ba67c5350a187ab47cbca">parentVar</a>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classInheritenceNamespace_1_1AbstractClass.html#a8a8a4c06281f4d84820df074bd9ea507">   58</a></span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classInheritenceNamespace_1_1AbstractClass.html#a8a8a4c06281f4d84820df074bd9ea507">has_code</a>(<span class="keywordtype">bool</span> nonop = <span class="keyword">false</span>) { <span class="keywordflow">return</span> nonop; }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>};</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="structInheritenceNamespace_1_1TestClass.html">   63</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structInheritenceNamespace_1_1TestClass.html">TestClass</a> : <span class="keyword">public</span> <a class="code hl_class" href="classInheritenceNamespace_1_1AbstractClass.html">AbstractClass</a> {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="structInheritenceNamespace_1_1TestClass.html#a40d9e4cc0f4214150620c14a65ddd224">   70</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="structInheritenceNamespace_1_1TestClass.html#a40d9e4cc0f4214150620c14a65ddd224">morphMe</a>(uint16_t var, <span class="keywordtype">bool</span> nonop) {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <a class="code hl_variable" href="structInheritenceNamespace_1_1TestClass.html#a4f3be9e96fd1afb6c268e847e916ea4d">myVar</a> = var; <span class="comment">// should probably initialize this in c&#39;tor properly</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classInheritenceNamespace_1_1AbstractClass.html#a8a8a4c06281f4d84820df074bd9ea507">has_code</a>(nonop)) {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <a class="code hl_variable" href="classInheritenceNamespace_1_1AbstractClass.html#a054b565d4d0ba67c5350a187ab47cbca">parentVar</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            <a class="code hl_variable" href="structInheritenceNamespace_1_1TestClass.html#a4f3be9e96fd1afb6c268e847e916ea4d">myVar</a>++;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="structInheritenceNamespace_1_1TestClass.html#a4f3be9e96fd1afb6c268e847e916ea4d">   83</a></span>    uint8_t <a class="code hl_variable" href="structInheritenceNamespace_1_1TestClass.html#a4f3be9e96fd1afb6c268e847e916ea4d">myVar</a>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>};</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>}</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="namespacetemplateNamespace.html">   92</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetemplateNamespace.html">templateNamespace</a> {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> R&gt;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="classtemplateNamespace_1_1TemplateClass.html">  100</a></span><span class="keyword">class </span><a class="code hl_class" href="classtemplateNamespace_1_1TemplateClass.html">TemplateClass</a> {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="classtemplateNamespace_1_1TemplateClass.html#a354cfb802ba9894214d9c0cdecb4daf0">  108</a></span>    <a class="code hl_function" href="classtemplateNamespace_1_1TemplateClass.html#a354cfb802ba9894214d9c0cdecb4daf0">TemplateClass</a>(T var_1, R var_2) : <a class="code hl_variable" href="classtemplateNamespace_1_1TemplateClass.html#ae4cc7bc5b249245c7df8d672f8049d94">var1</a>(var_1), <a class="code hl_variable" href="classtemplateNamespace_1_1TemplateClass.html#a970c8061f66cd26fe3e794da444eaf47">var2</a>(var_2) {}</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="classtemplateNamespace_1_1TemplateClass.html#a18dab0250d3d4e4f0218517998ae5916">  114</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classtemplateNamespace_1_1TemplateClass.html#a18dab0250d3d4e4f0218517998ae5916">test</a>(T check);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="classtemplateNamespace_1_1TemplateClass.html#a467eb9e456d5920e041f700b076d7e3c">  120</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classtemplateNamespace_1_1TemplateClass.html#a467eb9e456d5920e041f700b076d7e3c">test</a>(R check);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="classtemplateNamespace_1_1TemplateClass.html#ae4cc7bc5b249245c7df8d672f8049d94">  124</a></span>    T <a class="code hl_variable" href="classtemplateNamespace_1_1TemplateClass.html#ae4cc7bc5b249245c7df8d672f8049d94">var1</a>;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="classtemplateNamespace_1_1TemplateClass.html#a970c8061f66cd26fe3e794da444eaf47">  126</a></span>    R <a class="code hl_variable" href="classtemplateNamespace_1_1TemplateClass.html#a970c8061f66cd26fe3e794da444eaf47">var2</a>;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>};</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="keyword">extern</span> <a class="code hl_class" href="classtemplateNamespace_1_1TemplateClass.html">TemplateClass</a> <a class="code hl_variable" href="namespacetemplateNamespace.html#a6c47c8a13a01b685defd39214746eacc">quickStarter</a> = <a class="code hl_class" href="classtemplateNamespace_1_1TemplateClass.html">TemplateClass&lt;int, bool&gt;</a>(1, 0);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>}</div>
 <div class="ttc" id="aclassInheritenceNamespace_1_1AbstractClass_html"><div class="ttname"><a href="classInheritenceNamespace_1_1AbstractClass.html">InheritenceNamespace::AbstractClass</a></div><div class="ttdoc">An Abstract class for polymorphism.</div><div class="ttdef"><b>Definition:</b> <a href="TestLib_8h_source.html#l00022">TestLib.h:22</a></div></div>
 <div class="ttc" id="aclassInheritenceNamespace_1_1AbstractClass_html_a0373ad3726b92feb0933cb3a7bf369ea"><div class="ttname"><a href="classInheritenceNamespace_1_1AbstractClass.html#a0373ad3726b92feb0933cb3a7bf369ea">InheritenceNamespace::AbstractClass::morphMe</a></div><div class="ttdeci">virtual void morphMe()=0</div><div class="ttdoc">A pure virtual function.</div></div>
 <div class="ttc" id="aclassInheritenceNamespace_1_1AbstractClass_html_a054b565d4d0ba67c5350a187ab47cbca"><div class="ttname"><a href="classInheritenceNamespace_1_1AbstractClass.html#a054b565d4d0ba67c5350a187ab47cbca">InheritenceNamespace::AbstractClass::parentVar</a></div><div class="ttdeci">bool parentVar</div><div class="ttdoc">A variable declared in the abstract parent class.</div><div class="ttdef"><b>Definition:</b> <a href="TestLib_8h_source.html#l00049">TestLib.h:49</a></div></div>
@@ -279,20 +232,16 @@ $(document).ready(function(){initNavTree('TestLib_8h_source.html',''); initResiz
 <div class="ttc" id="astructInheritenceNamespace_1_1TestClass_html_a40d9e4cc0f4214150620c14a65ddd224"><div class="ttname"><a href="structInheritenceNamespace_1_1TestClass.html#a40d9e4cc0f4214150620c14a65ddd224">InheritenceNamespace::TestClass::morphMe</a></div><div class="ttdeci">void morphMe(uint16_t var, bool nonop)</div><div class="ttdoc">A usable function.</div><div class="ttdef"><b>Definition:</b> <a href="TestLib_8h_source.html#l00070">TestLib.h:70</a></div></div>
 <div class="ttc" id="astructInheritenceNamespace_1_1TestClass_html_a4f3be9e96fd1afb6c268e847e916ea4d"><div class="ttname"><a href="structInheritenceNamespace_1_1TestClass.html#a4f3be9e96fd1afb6c268e847e916ea4d">InheritenceNamespace::TestClass::myVar</a></div><div class="ttdeci">uint8_t myVar</div><div class="ttdoc">A private variable specific to the child class.</div><div class="ttdef"><b>Definition:</b> <a href="TestLib_8h_source.html#l00083">TestLib.h:83</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
     <!-- HTML footer for doxygen 1.9.1-->
     <a class="btn-floating" id="scroll-to-top" href="#"><i class="material-icons-round">north</i></a>
     <!-- start footer part -->
-    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-      <li class="navelem"><a class="el" href="dir_9bd322c253a2886b3cf29f79d0833a82.html">test_src</a></li><li class="navelem"><a class="el" href="TestLib_8h.html">TestLib.h</a></li>
-    </div>
-    <script type="text/javascript" src="materialize.min.js"></script>
     <script type="text/javascript" src="clipboard.min.js"></script>
     <script type="text/javascript" src="theme_footer_script.min.js"></script>
     <script type="text/javascript">M.AutoInit();</script>
+    <script type="text/javascript">replaceTabbedIndex();</script>
     <footer class="page-footer">
       <div class="container right">
-        Generated on Thu Dec 30 2021 04:04:55 for Doxygen Materialized by <a href="https://www.doxygen.org/index.html">Doxygen v1.9.1</a>.<br>
+        Generated on Fri Dec 31 2021 18:57:38 for Doxygen Materialized by <a href="https://www.doxygen.org/index.html">Doxygen v1.9.3</a>.<br>
         Using <a href="https://github.com/2bndy5/doxygen-materialized">doxygen-materialized theme from 2bndy5</a>.
       </div>
     </footer>

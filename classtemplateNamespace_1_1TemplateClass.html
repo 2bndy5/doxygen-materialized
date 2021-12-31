@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=9" />
-    <meta name="generator" content="Doxygen 1.9.1" />
+    <meta name="generator" content="Doxygen 1.9.3" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- fetch material design assets -->
     <link
@@ -22,23 +22,19 @@
     <!-- <link href="tabs.css" rel="stylesheet" type="text/css"/> -->
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="dynsections.js"></script>
-    <!-- <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
- -->
-    <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
+    <!-- $ treeview -->
+    <!-- $ search -->
+    <script type="text/javascript" src="search/searchdata.js"></script>
+    <script type="text/javascript" src="search/search.js"></script>
     <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX","output/HTML-CSS"],
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
     <link href="theme.min.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="navtreedata.js"></script>
+    <script type="text/javascript" src="materialize.min.js"></script>
     <script type="text/javascript" src="theme_header_script.min.js"></script>
 </head>
 <body>
@@ -52,8 +48,7 @@
                 <li class="flow-text hide-on-small-only"><span style="padding: 0 15px;">v0.1.0</span></li>
                 <li class="right">
                     <div class="search-wrapper right" style="display: inline-flex;">
-                        <span class="dropdown-trigger material-icons prefix"
-                            data-target="searchParameters"
+                        <span class="dropdown-trigger material-icons prefix no-autoinit" data-target="searchParameters"
                             style="line-height: unset;">search
                         </span>
                                 <div id="MSearchBox" class="MSearchBoxInactive">
@@ -70,71 +65,41 @@
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
           </span>
         </div>
+                        <!-- 
+                            <div id="MSearchBox" class="MSearchBoxInactive">
+                                <span class="left">
+                                <img id="MSearchSelect" src="search/mag_sel.svg"
+                                    onmouseover="return searchBox.OnSearchSelectShow()"
+                                    onmouseout="return searchBox.OnSearchSelectHide()"
+                                    alt=""/>
+                                <input type="text" id="MSearchField" value="Search" accesskey="S"
+                                    onfocus="searchBox.OnSearchFieldFocus(true)" 
+                                    onblur="searchBox.OnSearchFieldFocus(false)" 
+                                    onkeyup="searchBox.OnSearchFieldChange(event)"/>
+                                </span><span class="right">
+                                    <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+                                </span>
+                            </div>
+                         -->
                         </span>
                     </div>
                 </li>
                 <li class="right">
-                    <div class="switch">
-                        <label>
-                            <input id="dark-theme-toogle" type="checkbox">
-                            <span class="lever"></span>
+                    <div class="color-switch">
+                        <input id="dark-theme-toggle" type="checkbox">
+                        <label for="dark-theme-toggle" class="tooltipped" data-position="left"
+                            data-tooltip="toggle light/dark theme">
+                            <i class="material-icons">lightbulb</i>
                         </label>
                     </div>
                 </li>
             </ul>
-            <span class="hide-on-med-and-down center" style="position: fixed;top: 44px;left: 76px;line-height: initial;">A theme for Doxygen html output using the materialize-css framework</span>
+            <span class="hide-on-med-and-down center"
+                style="position: fixed;top: 44px;left: 76px;line-height: initial;">A theme for Doxygen html output using the materialize-css framework</span>
         </div>
     </nav>
     <ul id="searchParameters" class="dropdown-content">
-        <!-- Replaced Search parameters dropdown list -->
-        <li onclick="searchBox.OnSelectItem(0)">
-            <p>
-                <label>
-                    <input class="with-gap" name="SelectItems" type="radio" checked />
-                    <span>All</span>
-                </label>
-            </p>
-        </li>
-        <li onclick="searchBox.OnSelectItem(1)">
-            <p>
-                <label>
-                    <input class="with-gap" name="SelectItems" type="radio" />
-                    <span>Classes</span>
-                </label>
-            </p>
-        </li>
-        <li onclick="searchBox.OnSelectItem(2)">
-            <p>
-                <label>
-                    <input class="with-gap" name="SelectItems" type="radio" />
-                    <span>Files</span>
-                </label>
-            </p>
-        </li>
-        <li onclick="searchBox.OnSelectItem(3)">
-            <p>
-                <label>
-                    <input class="with-gap" name="SelectItems" type="radio" />
-                    <span>Functions</span>
-                </label>
-            </p>
-        </li>
-        <li onclick="searchBox.OnSelectItem(4)">
-            <p>
-                <label>
-                    <input class="with-gap" name="SelectItems" type="radio" />
-                    <span>Variables</span>
-                </label>
-            </p>
-        </li>
-        <li onclick="searchBox.OnSelectItem(5)">
-            <p>
-                <label>
-                    <input class="with-gap" name="SelectItems" type="radio" />
-                    <span>Pages</span>
-                </label>
-            </p>
-        </li>
+        <!-- Replaced Search parameters dropdown list (populated by `init_search()`) -->
     </ul>
     <div id="slide-out" class="sidenav">
         <div class="side-nav-header" style="text-align: center;">
@@ -151,39 +116,23 @@
     </div>
     <div id="top">
         <!-- do not remove this div, it is closed by doxygen! -->
-        <!-- end header part --><!-- Generated by Doxygen 1.9.1 -->
+        <!-- end header part --><!-- Generated by Doxygen 1.9.3 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 /* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
   initMenu('',true,false,'search.php','Search');
   $(document).ready(function() { init_search(); });
 });
-/* @license-end */</script>
-<div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('classtemplateNamespace_1_1TemplateClass.html',''); initResizable(); });
 /* @license-end */
 </script>
-<div id="doc-content">
+<div id="main-nav"></div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -198,13 +147,17 @@ $(document).ready(function(){initNavTree('classtemplateNamespace_1_1TemplateClas
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacetemplateNamespace.html">templateNamespace</a></li><li class="navelem"><a class="el" href="classtemplateNamespace_1_1TemplateClass.html">TemplateClass</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classtemplateNamespace_1_1TemplateClass-members.html">List of all members</a>  </div>
-  <div class="headertitle">
-<div class="title">templateNamespace::TemplateClass&lt; T, R &gt; Class Template Reference</div>  </div>
+  <div class="headertitle"><div class="title">templateNamespace::TemplateClass&lt; T, R &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -213,7 +166,7 @@ $(document).ready(function(){initNavTree('classtemplateNamespace_1_1TemplateClas
 
 <p><code>#include &lt;<a class="el" href="TestLib_8h_source.html">TestLib.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a354cfb802ba9894214d9c0cdecb4daf0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtemplateNamespace_1_1TemplateClass.html#a354cfb802ba9894214d9c0cdecb4daf0">TemplateClass</a> (T var_1, R var_2)</td></tr>
 <tr class="memdesc:a354cfb802ba9894214d9c0cdecb4daf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">A constructor that takes in templated data.  <a href="classtemplateNamespace_1_1TemplateClass.html#a354cfb802ba9894214d9c0cdecb4daf0">More...</a><br /></td></tr>
@@ -225,7 +178,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a467eb9e456d5920e041f700b076d7e3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">An overloaded function.  <a href="classtemplateNamespace_1_1TemplateClass.html#a467eb9e456d5920e041f700b076d7e3c">More...</a><br /></td></tr>
 <tr class="separator:a467eb9e456d5920e041f700b076d7e3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:ae4cc7bc5b249245c7df8d672f8049d94"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtemplateNamespace_1_1TemplateClass.html#ae4cc7bc5b249245c7df8d672f8049d94">var1</a></td></tr>
 <tr class="memdesc:ae4cc7bc5b249245c7df8d672f8049d94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Some encapsulated data.  <a href="classtemplateNamespace_1_1TemplateClass.html#ae4cc7bc5b249245c7df8d672f8049d94">More...</a><br /></td></tr>
@@ -235,10 +188,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a970c8061f66cd26fe3e794da444eaf47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename T, typename R&gt;<br />
-class templateNamespace::TemplateClass&lt; T, R &gt;</h3>
-
-<p>A templated class. </p>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T, typename R&gt;<br />
+class templateNamespace::TemplateClass&lt; T, R &gt;</div><p >A templated class. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>Some data of your choosing </td></tr>
@@ -249,7 +200,7 @@ class templateNamespace::TemplateClass&lt; T, R &gt;</h3>
 
 <p class="definition">Definition at line <a class="el" href="TestLib_8h_source.html#l00100">100</a> of file <a class="el" href="TestLib_8h_source.html">TestLib.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a354cfb802ba9894214d9c0cdecb4daf0"></a>
+<a id="a354cfb802ba9894214d9c0cdecb4daf0" name="a354cfb802ba9894214d9c0cdecb4daf0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a354cfb802ba9894214d9c0cdecb4daf0">&#9670;&nbsp;</a></span>TemplateClass()</h2>
 
 <div class="memitem">
@@ -261,7 +212,7 @@ template&lt;typename T , typename R &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classtemplateNamespace_1_1TemplateClass.html">templateNamespace::TemplateClass</a>&lt; T, R &gt;::<a class="el" href="classtemplateNamespace_1_1TemplateClass.html">TemplateClass</a> </td>
+          <td class="memname"><a class="el" href="classtemplateNamespace_1_1TemplateClass.html">templateNamespace::TemplateClass</a>&lt; T, R &gt;::TemplateClass </td>
           <td>(</td>
           <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>var_1</em>, </td>
@@ -295,14 +246,14 @@ template&lt;typename T , typename R &gt; </div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="TestLib_8h_source.html#l00108">108</a> of file <a class="el" href="TestLib_8h_source.html">TestLib.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;: <a class="code" href="classtemplateNamespace_1_1TemplateClass.html#ae4cc7bc5b249245c7df8d672f8049d94">var1</a>(var_1), <a class="code" href="classtemplateNamespace_1_1TemplateClass.html#a970c8061f66cd26fe3e794da444eaf47">var2</a>(var_2) {}</div>
+<div class="fragment"><div class="line"><span class="lineno">  108</span>: <a class="code hl_variable" href="classtemplateNamespace_1_1TemplateClass.html#ae4cc7bc5b249245c7df8d672f8049d94">var1</a>(var_1), <a class="code hl_variable" href="classtemplateNamespace_1_1TemplateClass.html#a970c8061f66cd26fe3e794da444eaf47">var2</a>(var_2) {}</div>
 <div class="ttc" id="aclasstemplateNamespace_1_1TemplateClass_html_a970c8061f66cd26fe3e794da444eaf47"><div class="ttname"><a href="classtemplateNamespace_1_1TemplateClass.html#a970c8061f66cd26fe3e794da444eaf47">templateNamespace::TemplateClass::var2</a></div><div class="ttdeci">R var2</div><div class="ttdoc">Some encapsulated data.</div><div class="ttdef"><b>Definition:</b> <a href="TestLib_8h_source.html#l00126">TestLib.h:126</a></div></div>
 <div class="ttc" id="aclasstemplateNamespace_1_1TemplateClass_html_ae4cc7bc5b249245c7df8d672f8049d94"><div class="ttname"><a href="classtemplateNamespace_1_1TemplateClass.html#ae4cc7bc5b249245c7df8d672f8049d94">templateNamespace::TemplateClass::var1</a></div><div class="ttdeci">T var1</div><div class="ttdoc">Some encapsulated data.</div><div class="ttdef"><b>Definition:</b> <a href="TestLib_8h_source.html#l00124">TestLib.h:124</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a467eb9e456d5920e041f700b076d7e3c"></a>
+<a id="a467eb9e456d5920e041f700b076d7e3c" name="a467eb9e456d5920e041f700b076d7e3c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a467eb9e456d5920e041f700b076d7e3c">&#9670;&nbsp;</a></span>test() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
@@ -330,7 +281,7 @@ template&lt;typename T , typename R &gt; </div>
 
 </div>
 </div>
-<a id="a18dab0250d3d4e4f0218517998ae5916"></a>
+<a id="a18dab0250d3d4e4f0218517998ae5916" name="a18dab0250d3d4e4f0218517998ae5916"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a18dab0250d3d4e4f0218517998ae5916">&#9670;&nbsp;</a></span>test() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
@@ -359,7 +310,7 @@ template&lt;typename T , typename R &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="ae4cc7bc5b249245c7df8d672f8049d94"></a>
+<a id="ae4cc7bc5b249245c7df8d672f8049d94" name="ae4cc7bc5b249245c7df8d672f8049d94"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae4cc7bc5b249245c7df8d672f8049d94">&#9670;&nbsp;</a></span>var1</h2>
 
 <div class="memitem">
@@ -387,7 +338,7 @@ template&lt;typename T , typename R &gt; </div>
 
 </div>
 </div>
-<a id="a970c8061f66cd26fe3e794da444eaf47"></a>
+<a id="a970c8061f66cd26fe3e794da444eaf47" name="a970c8061f66cd26fe3e794da444eaf47"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a970c8061f66cd26fe3e794da444eaf47">&#9670;&nbsp;</a></span>var2</h2>
 
 <div class="memitem">
@@ -419,20 +370,16 @@ template&lt;typename T , typename R &gt; </div>
 <li>test_src/<a class="el" href="TestLib_8h_source.html">TestLib.h</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
     <!-- HTML footer for doxygen 1.9.1-->
     <a class="btn-floating" id="scroll-to-top" href="#"><i class="material-icons-round">north</i></a>
     <!-- start footer part -->
-    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-      <li class="navelem"><a class="el" href="namespacetemplateNamespace.html">templateNamespace</a></li><li class="navelem"><a class="el" href="classtemplateNamespace_1_1TemplateClass.html">TemplateClass</a></li>
-    </div>
-    <script type="text/javascript" src="materialize.min.js"></script>
     <script type="text/javascript" src="clipboard.min.js"></script>
     <script type="text/javascript" src="theme_footer_script.min.js"></script>
     <script type="text/javascript">M.AutoInit();</script>
+    <script type="text/javascript">replaceTabbedIndex();</script>
     <footer class="page-footer">
       <div class="container right">
-        Generated on Thu Dec 30 2021 04:04:55 for Doxygen Materialized by <a href="https://www.doxygen.org/index.html">Doxygen v1.9.1</a>.<br>
+        Generated on Fri Dec 31 2021 18:57:38 for Doxygen Materialized by <a href="https://www.doxygen.org/index.html">Doxygen v1.9.3</a>.<br>
         Using <a href="https://github.com/2bndy5/doxygen-materialized">doxygen-materialized theme from 2bndy5</a>.
       </div>
     </footer>
