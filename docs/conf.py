@@ -20,7 +20,7 @@ subprocess.run(["doxygen", "--version"], check=True)
 # first install theme's dev dependencies
 if not os.path.exists("../node_modules"):
     print("Theme dependencies not present. Running `npm install`")
-    subprocess.run(["npm", "install", ".."], check=True)
+    subprocess.run(["npm", "install"], check=True)
 
 # now run the package script called "doxygen"
 subprocess.run(["npm", "run", "doxygen"], check=True)

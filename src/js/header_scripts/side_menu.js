@@ -7,7 +7,7 @@ var hashName = window.location.hash;
 
 /**
  * @brief creates a clickable item for use in the side-nav list (or sub-list).
- * 
+ *
  * This is a helper function meant for recursively iterating over the menudata.children array(s).
  * @note This function assumes that each child node has a `text` and `url` value.
  * @param child The child node to create a list item from.
@@ -105,7 +105,7 @@ function loadScript(scriptName, func) {
 
 /**
  * @brief creates a clickable item for use in the side-nav list (or sub-list).
- * 
+ *
  * This is a helper function meant for recursively iterating over the navtreedata nested array(s).
  * 1. menu item title
  * 2. menu item url
@@ -114,9 +114,11 @@ function loadScript(scriptName, func) {
  * @param {array[string, string, any]} child The child node to create a list item from.
  * @param {string} id The string used in conjunctio eith the index for the menu item's id.
  * @param {number} index The specific index of the of the menu item in the array of menu data.
- * @returns a `<li>` element to be appended to the side-nav
+ * @param {Element} parentElement A convenience reference to the parent element's input checkbox
+ * for which the returned element will be appended to.
+ * @returns {Element} a `<li>` element to be appended to the side-nav
  */
-function createTreeItem(child, id, index) {
+function createTreeItem(child, id, index, parentElement) {
     var newItem = document.createElement("li");
     var menuLabel = document.createElement("a"); // a link element to contain the label
     if (child[2]) {
@@ -149,11 +151,11 @@ function createTreeItem(child, id, index) {
             var checkboxes = document.querySelectorAll("input.menu-toggle");
             checkboxes.forEach(function(el){ el.checked = false; });
             menuToggle.checked = true;
-            var walkingId = menuId.substring(0, menuId.lastIndexOf("-"));
+            var walkingId = id;
             while (walkingId != "nav") {
                 checkboxes = document.querySelector("input#" + walkingId);
                 if (checkboxes) { checkboxes.checked = true; }
-                // else { console.log("checkbox", walkingId, "not found"); }
+                else if (parentElement) { parentElement.checked = true; }
                 walkingId = walkingId.substring(0, walkingId.lastIndexOf("-"));
             }
         }
@@ -177,6 +179,7 @@ function createTreeItem(child, id, index) {
         M.Tooltip.init(goToIcon, { text: "Go to corresponding page", position: "left" });
         backToggle.append(goToIcon);
         backToggle.append(document.createElement("br"));
+
         // add word-break elements if scoping operator is detected
         var words = child[0].split("::");
         if (words.length > 1) {
@@ -185,7 +188,9 @@ function createTreeItem(child, id, index) {
         else {
             backToggle.append(document.createTextNode(child[0]));
         }
+
         divMenu.append(backToggle);
+        newItem.append(divMenu);
         var subItems = document.createElement("ul");
         if (typeof (child[2]) === "string") {
             loadScript(
@@ -194,18 +199,17 @@ function createTreeItem(child, id, index) {
                     var evalWorkaround = new Function("return " + child[2] + ";");
                     var arrData = evalWorkaround();
                     for (var d = 0; d < arrData.length; d++) {
-                        subItems.append(createTreeItem(arrData[d], menuId, d));
+                        subItems.append(createTreeItem(arrData[d], menuId, d, menuToggle));
                     }
                 }
             );
         }
         else { // if not a string nor null, then it is a nested array
             for (var i = 0; i < child[2].length; i++) {
-                subItems.append(createTreeItem(child[2][i], menuId, i));
+                subItems.append(createTreeItem(child[2][i], menuId, i, menuToggle));
             }
         }
         divMenu.append(subItems);
-        newItem.append(divMenu);
     }
     else {
         // if no children, then make the `<a>` element a hyperlink
@@ -229,7 +233,7 @@ function initNavTree() {
         var sideNavContent = sideNav.getElementsByClassName("scroll-wrapper")[0];
         var navTree = NAVTREE[0][2];
         for (var i = 0; i < navTree.length; i++) {
-            sideNavContent.append(createTreeItem(navTree[i], "nav", i));
+            sideNavContent.append(createTreeItem(navTree[i], "nav", i, null));
         }
     }
 }
