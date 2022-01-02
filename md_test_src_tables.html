@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- HTML header for doxygen 1.9.1-->
+<head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.3" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- material icons are served locally, but if you prefer they can be fetched remotely like so: -->
+    <!-- fetch material icons -- >
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Icons+TwoTone&family=Material+Icons+Outlined&family=Material+Icons+Round&family=Material+Icons"
+        rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto=mono" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,400;1,500&family=Roboto:ital,wght@0,100;0,400;1,500&display=swap"
+        rel="stylesheet">
+    <!-- end material icons -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Doxygen Materialized: Tables</title>
+    <!-- <link href="tabs.css" rel="stylesheet" type="text/css"/> -->
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <!-- $ treeview -->
+    <!-- $ search -->
+    <script type="text/javascript" src="search/searchdata.js"></script>
+    <script type="text/javascript" src="search/search.js"></script>
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+    <link href="theme.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="navtreedata.js"></script>
+    <script type="text/javascript" src="materialize.min.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" data-target="slide-out" class="sidenav-trigger show-on-medium-and-up">
+                <span class="material-icons" style="line-height: unset;">menu</span>
+            </a>
+            <ul id="nav-bar">
+                <li id="project-name" class="flow-text hide-on-small-only"><span style="padding: 0 15px;">Doxygen Materialized</span></li>
+                <li id="project-number" class="flow-text hide-on-small-only"><span style="padding: 0 15px;">v0.1.0</span></li>
+                <li class="right">
+                    <div class="search-wrapper right" style="display: inline-flex;">
+                        <div class="dropdown-trigger no-autoinit" data-target="searchParameters">
+                            <span class="material-icons">search</span><span class="material-icons-round">arrow_drop_down</span>
+                        </div>
+                        <ul id="searchParameters" class="dropdown-content">
+                            <!-- Replaced Search parameters dropdown list (populated by `init_search()`) -->
+                        </ul>
+                                <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+                        </span>
+                    </div>
+                </li>
+                <li class="right">
+                    <div class="color-switch">
+                        <input id="dark-theme-toggle" type="checkbox">
+                        <label for="dark-theme-toggle" class="tooltipped" data-position="left"
+                            data-tooltip="toggle light/dark theme">
+                            <i class="material-icons">lightbulb</i>
+                        </label>
+                    </div>
+                </li>
+            </ul>
+            <span id="project-brief" class="hide-on-med-and-down center"
+                style="position: fixed;top: 44px;left: 76px;line-height: initial;">A theme for Doxygen html output using the materialize-css framework</span>
+        </div>
+    </nav>
+    <div id="slide-out" class="sidenav">
+        <div class="side-nav-header" style="text-align: center;">
+            <a href="index.html">
+                <img alt="Logo" src="bland_logo.png" />
+                <div>
+                    Doxygen Materialized
+                    v0.1.0
+                </div>
+            </a>
+        </div>
+        <ul class="scroll-wrapper">
+        </ul>
+    </div>
+    <div id="top">
+        <!-- do not remove this div, it is closed by doxygen! -->
+        <script type="text/javascript" src="theme_header_script.min.js"></script>
+        <!-- end header part --><!-- Generated by Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('md_test_src_tables.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">Tables </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="toc"><h3>Table of Contents</h3>
+<ul><li class="level1"><a href="#autotoc_md3">Markdown Tables</a><ul><li class="level2"><a href="#autotoc_md4">Column Alignment</a></li>
+<li class="level2"><a href="#autotoc_md5">Cell Spanning</a><ul><li class="level3"><a href="#autotoc_md6">Row Spanning</a></li>
+<li class="level3"><a href="#autotoc_md7">Column Spanning</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><a href="#autotoc_md8">HTML tables</a></li>
+</ul>
+</div>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md3"></a>
+Markdown Tables</h1>
+<p >Here is an example:</p>
+<div class="fragment"><div class="line">First Header  | Second Header</div>
+<div class="line">------------- | -------------</div>
+<div class="line">Content Cell  | Content Cell</div>
+<div class="line">Content Cell  | Content Cell</div>
+</div><!-- fragment --><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">First Header   </th><th class="markdownTableHeadNone">Second Header    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Content Cell   </td><td class="markdownTableBodyNone">Content Cell    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Content Cell   </td><td class="markdownTableBodyNone">Content Cell   </td></tr>
+</table>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Column Alignment</h2>
+<p >Column alignment can be controlled via one or two colons at the header separator line:</p>
+<div class="fragment"><div class="line">| Right | Center | Left  |</div>
+<div class="line">| ----: | :----: | :---- |</div>
+<div class="line">| 10    | 10     | 10    |</div>
+<div class="line">| 1000  | 1000   | 1000  |</div>
+</div><!-- fragment --><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadRight">Right   </th><th class="markdownTableHeadCenter">Center   </th><th class="markdownTableHeadLeft">Left    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyRight">10   </td><td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyLeft">10    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyRight">1000   </td><td class="markdownTableBodyCenter">1000   </td><td class="markdownTableBodyLeft">1000   </td></tr>
+</table>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Cell Spanning</h2>
+<h3><a class="anchor" id="autotoc_md6"></a>
+Row Spanning</h3>
+<p >Additionally, column and row spans are supported. Using a caret ("^") in a cell indicates that the cell above should span rows. Sequences of carets may be used for any number of row spans. For example:</p>
+<div class="fragment"><div class="line">| Right | Center | Left  |</div>
+<div class="line">| ----: | :----: | :---- |</div>
+<div class="line">| 10    | 10     | 10    |</div>
+<div class="line">| ^     | 1000   | 1000  |</div>
+</div><!-- fragment --><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadRight">Right   </th><th class="markdownTableHeadCenter">Center   </th><th class="markdownTableHeadLeft">Left    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyRight" rowspan="2">10   </td><td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyLeft">10    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">1000   </td><td class="markdownTableBodyLeft">1000   </td></tr>
+</table>
+<h3><a class="anchor" id="autotoc_md7"></a>
+Column Spanning</h3>
+<p >Column spans are supported by means of directly adjacent vertical bars ("|"). Each additional vertical bar indicates an additional column to be spanned. To put it another way, a single vertical bar indicates a single column span, two vertical bars indicates a 2 columns span, and so on. For example:</p>
+<div class="fragment"><div class="line">| Right | Center | Left  |</div>
+<div class="line">| ----: | :----: | :---- |</div>
+<div class="line">| 10    | 10     | 10    |</div>
+<div class="line">| 1000  |||</div>
+</div><!-- fragment --><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadRight">Right   </th><th class="markdownTableHeadCenter">Center   </th><th class="markdownTableHeadLeft">Left    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyRight">10   </td><td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyLeft">10    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyRight" colspan="3">1000   </td></tr>
+</table>
+<h1><a class="anchor" id="autotoc_md8"></a>
+HTML tables</h1>
+<p >Here is an example of a complex table using borrowed syntax from HTML:</p>
+<div class="fragment"><div class="line">&lt;table&gt;</div>
+<div class="line">&lt;caption id=&quot;multi_row&quot;&gt;Complex table&lt;/caption&gt;</div>
+<div class="line">&lt;tr&gt;&lt;th&gt;Column 1                      &lt;th&gt;Column 2        &lt;th&gt;Column 3</div>
+<div class="line">&lt;tr&gt;&lt;td rowspan=&quot;2&quot;&gt;cell row=1+2,col=1&lt;td&gt;cell row=1,col=2&lt;td&gt;cell row=1,col=3</div>
+<div class="line">&lt;tr&gt;&lt;td rowspan=&quot;2&quot;&gt;cell row=2+3,col=2                    &lt;td&gt;cell row=2,col=3</div>
+<div class="line">&lt;tr&gt;&lt;td&gt;cell row=3,col=1                                  &lt;td rowspan=&quot;2&quot;&gt;cell row=3+4,col=3</div>
+<div class="line">&lt;tr&gt;&lt;td colspan=&quot;2&quot;&gt;cell row=4,col=1+2</div>
+<div class="line">&lt;tr&gt;&lt;td&gt;cell row=5,col=1              &lt;td colspan=&quot;2&quot;&gt;cell row=5,col=2+3</div>
+<div class="line">&lt;tr&gt;&lt;td colspan=&quot;2&quot; rowspan=&quot;2&quot;&gt;cell row=6+7,col=1+2      &lt;td&gt;cell row=6,col=3</div>
+<div class="line">&lt;tr&gt;                                                      &lt;td&gt;cell row=7,col=3</div>
+<div class="line">&lt;tr&gt;&lt;td&gt;cell row=8,col=1              &lt;td&gt;cell row=8,col=2\n</div>
+<div class="line">  &lt;table&gt;</div>
+<div class="line">    &lt;tr&gt;&lt;td&gt;Inner cell row=1,col=1&lt;td&gt;Inner cell row=1,col=2</div>
+<div class="line">    &lt;tr&gt;&lt;td&gt;Inner cell row=2,col=1&lt;td&gt;Inner cell row=2,col=2</div>
+<div class="line">  &lt;/table&gt;</div>
+<div class="line">  &lt;td&gt;cell row=8,col=3</div>
+<div class="line">  &lt;ul&gt;</div>
+<div class="line">    &lt;li&gt;Item 1</div>
+<div class="line">    &lt;li&gt;Item 2</div>
+<div class="line">  &lt;/ul&gt;</div>
+<div class="line">&lt;/table&gt;</div>
+</div><!-- fragment --><a class="anchor" id="multi_row"></a>
+<table class="doxtable">
+<caption>Complex table</caption>
+<tr>
+<th>Column 1 </th><th>Column 2 </th><th>Column 3 </th></tr>
+<tr>
+<td rowspan="2">cell row=1+2,col=1</td><td>cell row=1,col=2</td><td>cell row=1,col=3 </td></tr>
+<tr>
+<td rowspan="2">cell row=2+3,col=2 </td><td>cell row=2,col=3 </td></tr>
+<tr>
+<td>cell row=3,col=1 </td><td rowspan="2">cell row=3+4,col=3 </td></tr>
+<tr>
+<td colspan="2">cell row=4,col=1+2 </td></tr>
+<tr>
+<td>cell row=5,col=1 </td><td colspan="2">cell row=5,col=2+3 </td></tr>
+<tr>
+<td colspan="2" rowspan="2">cell row=6+7,col=1+2 </td><td>cell row=6,col=3 </td></tr>
+<tr>
+<td>cell row=7,col=3 </td></tr>
+<tr>
+<td>cell row=8,col=1 </td><td>cell row=8,col=2<br  />
+ <table class="doxtable">
+<tr>
+<td>Inner cell row=1,col=1</td><td>Inner cell row=1,col=2 </td></tr>
+<tr>
+<td>Inner cell row=2,col=1</td><td>Inner cell row=2,col=2 </td></tr>
+</table>
+</td><td>cell row=8,col=3 <ul>
+<li>
+Item 1 </li>
+<li>
+Item 2 </li>
+</ul>
+</td></tr>
+</table>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+    <!-- HTML footer for doxygen 1.9.1-->
+    <a class="btn-floating" id="scroll-to-top" href="#"><i class="material-icons-round">arrow_upward</i></a>
+    <!-- start footer part -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+    </div>
+    <script type="text/javascript" src="clipboard.min.js"></script>
+    <script type="text/javascript" src="theme_footer_script.min.js"></script>
+    <script type="text/javascript">M.AutoInit();</script>
+    <footer class="page-footer">
+      <div class="container right">
+        Generated on Sun Jan 2 2022 17:12:01 for Doxygen Materialized by <a href="https://www.doxygen.org/index.html">Doxygen v1.9.3</a>.<br>
+        Using <a href="https://github.com/2bndy5/doxygen-materialized">doxygen-materialized theme from 2bndy5</a>.
+      </div>
+    </footer>
+  </body>
+</html>
