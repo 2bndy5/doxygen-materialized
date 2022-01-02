@@ -38,7 +38,6 @@
   --code-keyword-type: hsl(calc(var(--accent-hue) + 102deg), var(--lighten-5), var(--darken-2));
   --code-keyword-flow: hsl(calc(var(--accent-hue) + 157deg), var(--lighten-5), var(--darken-2));
 
-  --tr-even-bg-color: hsl(var(--primary-hue), var(--darken-3), var(--lighten-5));
   --deprecated-admonition-color-lightness: var(--darken-4);
 }
 
@@ -64,7 +63,6 @@
     --code-keyword-type: hsl(calc(var(--accent-hue) + 102deg), var(--lighten-4), var(--lighten-2));
     --code-keyword-flow: hsl(calc(var(--accent-hue) + 157deg), var(--lighten-4), var(--lighten-2));
 
-    --tr-even-bg-color: hsl(var(--primary-hue), var(--darken-3), var(--darken-5));
     --deprecated-admonition-color-lightness: var(--lighten-3);
   }
 }

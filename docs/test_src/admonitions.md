@@ -1,5 +1,7 @@
 # Admonitions
 
+[TOC]
+
 > This is a blockquote...
 > With multiple lines,
 > and an `inline_code` syntax.

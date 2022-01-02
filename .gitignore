@@ -2,15 +2,13 @@ CMakeCache.txt
 CMakeFiles
 CMakeScripts
 Testing
-Makefile
+# Makefile
 cmake_install.cmake
 install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
 node_modules/
-html/
-latex/
-xml/
+docs/*build/
 **/doxygen-materialized/js/*
 **/doxygen-materialized/css/*
 dist/doxygen-materialized/

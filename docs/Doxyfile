@@ -1,6 +1,7 @@
 GENERATE_LATEX = NO
 INPUT = ./docs/test_src
 INPUT += ./README.md
+OUTPUT_DIRECTORY = ./docs/build
 EXAMPLE_PATH = ./
 PROJECT_NAME = Doxygen Materialized
 PROJECT_BRIEF = A theme for Doxygen html output using the materialize-css framework

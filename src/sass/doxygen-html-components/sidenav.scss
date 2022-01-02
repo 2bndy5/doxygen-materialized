@@ -10,6 +10,13 @@
   a:hover,
   a:visited {
     color: var(--text-color-inverted);
+
+    &.material-icons-outlined {
+      position: absolute;
+      right: 16px;
+      top: 16px;
+      text-decoration: none;
+    }
   }
 }
 
@@ -24,6 +31,7 @@
   .scroll-wrapper {
     overflow-y: auto;
     margin: 0;
+    padding-bottom: 60px;
   }
 
   .menu-next {

@@ -280,3 +280,35 @@ function adaptMemberTitle() {
     }
 }
 adaptMemberTitle();
+
+/**
+ * For reasons unknown the breadcrumb element (id: nav-path) is located in the footer when
+ * GENERATE_TREEVIEW = YES in the Doxyfile. Furthermore, doxygen uses a `<ul>` as the
+ * structure the breadcrumbs (which is incompatible with the material-css framework).
+ * 
+ * Thus we'll take all list elements, stack them in a `<div>`, and append the new breadcrumbs
+ * in the `#top` element (just below the navbar).
+ */
+function moveBreadcrumbs() {
+    var navPath = document.getElementById("nav-path");
+    if (!navPath) {
+        return;
+    }
+    var navWrapper = document.createElement("nav");
+    navWrapper.id = "nav-path";
+    navWrapper.classList.add("nav-wrapper");
+    var breadcrumbDiv = document.createElement("div");
+    breadcrumbDiv.classList.add("truncate");
+    navWrapper.append(breadcrumbDiv);
+    var breadcrumbs = navPath.getElementsByTagName("li");
+    for (var i = 0; i < breadcrumbs.length; i++) {
+        breadcrumbDiv.innerHTML += breadcrumbs[i].innerHTML;
+        breadcrumbDiv.lastElementChild.classList.add("breadcrumb");
+    }
+    var topElement = document.getElementById("top");
+    if (breadcrumbDiv.childElementCount > 0) {
+        topElement.append(navWrapper);
+    }
+    navPath.remove();
+}
+moveBreadcrumbs();

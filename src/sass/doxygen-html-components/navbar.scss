@@ -16,9 +16,15 @@ nav {
     color: var(--text-color-inverted);
   }
 
-  .dropdown-trigger:hover,
-  .sidenav-trigger:hover {
-    color: var(--code-comment);
+  .dropdown-trigger {    
+    .material-icons {
+      vertical-align: middle;
+    }
+
+    .material-icons-round {
+      position: relative;
+      left: -6px;
+    }
   }
 
   a,
@@ -35,7 +41,6 @@ nav {
 
       .material-icons {
         cursor: pointer;
-        // font-size: 32px;
       }
     }
 
@@ -50,9 +55,13 @@ nav {
 }
 
 #nav-path {
-  padding-left: 1rem;
+  padding: 0 1rem;
   z-index: 0;
   color: var(--text-color-inverted);
+
+  .truncate {
+    display: inline-flex;
+  }
 
   a,
   a:visited,

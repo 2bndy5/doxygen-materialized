@@ -8,7 +8,8 @@
     <meta name="generator" content="Doxygen $doxygenversion" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- fetch material design assets -->
+    <!-- material icons are served locally, but if you prefer they can be fetched remotely like so: -->
+    <!-- fetch material icons -- >
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Icons+TwoTone&family=Material+Icons+Outlined&family=Material+Icons+Round&family=Material+Icons"
         rel="stylesheet" type="text/css" />
@@ -18,7 +19,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,400;1,500&family=Roboto:ital,wght@0,100;0,400;1,500&display=swap"
         rel="stylesheet">
-    <!-- end material design assets -->
+    <!-- end material icons -->
 
     <link rel="icon" type="image/x-icon" href="$relpath^favicon.ico">
 
@@ -42,7 +43,6 @@
     <script type="text/javascript" src="navtreedata.js"></script>
     <!--END GENERATE_TREEVIEW-->
     <script type="text/javascript" src="$relpath^materialize.min.js"></script>
-    <script type="text/javascript" src="$relpath^theme_header_script.min.js"></script>
 </head>
 
 <body>
@@ -55,33 +55,20 @@
             </a>
             <ul id="nav-bar">
                 <!--BEGIN PROJECT_NAME-->
-                <li class="flow-text hide-on-small-only"><span style="padding: 0 15px;">$projectname</span></li>
+                <li id="project-name" class="flow-text hide-on-small-only"><span style="padding: 0 15px;">$projectname</span></li>
                 <!--END PROJECT_NAME-->
                 <!--BEGIN PROJECT_NUMBER-->
-                <li class="flow-text hide-on-small-only"><span style="padding: 0 15px;">$projectnumber</span></li>
+                <li id="project-number" class="flow-text hide-on-small-only"><span style="padding: 0 15px;">$projectnumber</span></li>
                 <!--END PROJECT_NUMBER-->
                 <li class="right">
                     <div class="search-wrapper right" style="display: inline-flex;">
-                        <span class="dropdown-trigger material-icons prefix no-autoinit" data-target="searchParameters"
-                            style="line-height: unset;">search
-                        </span>
+                        <div class="dropdown-trigger no-autoinit" data-target="searchParameters">
+                            <span class="material-icons">search</span><span class="material-icons-round">arrow_drop_down</span>
+                        </div>
+                        <ul id="searchParameters" class="dropdown-content">
+                            <!-- Replaced Search parameters dropdown list (populated by `init_search()`) -->
+                        </ul>
                         $searchbox
-                        <!-- 
-                            <div id="MSearchBox" class="MSearchBoxInactive">
-                                <span class="left">
-                                <img id="MSearchSelect" src="search/mag_sel.svg"
-                                    onmouseover="return searchBox.OnSearchSelectShow()"
-                                    onmouseout="return searchBox.OnSearchSelectHide()"
-                                    alt=""/>
-                                <input type="text" id="MSearchField" value="Search" accesskey="S"
-                                    onfocus="searchBox.OnSearchFieldFocus(true)" 
-                                    onblur="searchBox.OnSearchFieldFocus(false)" 
-                                    onkeyup="searchBox.OnSearchFieldChange(event)"/>
-                                </span><span class="right">
-                                    <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-                                </span>
-                            </div>
-                         -->
                         </span>
                     </div>
                 </li>
@@ -96,15 +83,11 @@
                 </li>
             </ul>
             <!--BEGIN PROJECT_BRIEF-->
-            <span class="hide-on-med-and-down center"
+            <span id="project-brief" class="hide-on-med-and-down center"
                 style="position: fixed;top: 44px;left: 76px;line-height: initial;">$projectbrief</span>
             <!--END PROJECT_BRIEF-->
         </div>
     </nav>
-
-    <ul id="searchParameters" class="dropdown-content">
-        <!-- Replaced Search parameters dropdown list (populated by `init_search()`) -->
-    </ul>
 
     <div id="slide-out" class="sidenav">
         <div class="side-nav-header" style="text-align: center;">
@@ -129,5 +112,6 @@
 
     <div id="top">
         <!-- do not remove this div, it is closed by doxygen! -->
+        <script type="text/javascript" src="$relpath^theme_header_script.min.js"></script>
 
         <!-- end header part -->

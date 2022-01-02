@@ -1,9 +1,12 @@
 # Tables
 
+[TOC]
+
+## Markdown Tables
+
 Here is an example:
 
 ```md
-
 First Header  | Second Header
 ------------- | -------------
 Content Cell  | Content Cell
@@ -14,11 +17,12 @@ First Header  | Second Header
 ------------- | -------------
 Content Cell  | Content Cell
 Content Cell  | Content Cell
+
+### Column Alignment
 
 Column alignment can be controlled via one or two colons at the header separator line:
 
 ```md
-
 | Right | Center | Left  |
 | ----: | :----: | :---- |
 | 10    | 10     | 10    |
@@ -29,11 +33,14 @@ Column alignment can be controlled via one or two colons at the header separator
 | ----: | :----: | :---- |
 | 10    | 10     | 10    |
 | 1000  | 1000   | 1000  |
+
+### Cell Spanning
+
+#### Row Spanning
 
 Additionally, column and row spans are supported. Using a caret ("^") in a cell indicates that the cell above should span rows. Sequences of carets may be used for any number of row spans. For example:
 
 ```md
-
 | Right | Center | Left  |
 | ----: | :----: | :---- |
 | 10    | 10     | 10    |
@@ -44,11 +51,12 @@ Additionally, column and row spans are supported. Using a caret ("^") in a cell 
 | ----: | :----: | :---- |
 | 10    | 10     | 10    |
 | ^     | 1000   | 1000  |
+
+#### Column Spanning
 
 Column spans are supported by means of directly adjacent vertical bars ("|"). Each additional vertical bar indicates an additional column to be spanned. To put it another way, a single vertical bar indicates a single column span, two vertical bars indicates a 2 columns span, and so on. For example:
 
 ```md
-
 | Right | Center | Left  |
 | ----: | :----: | :---- |
 | 10    | 10     | 10    |
@@ -60,10 +68,11 @@ Column spans are supported by means of directly adjacent vertical bars ("|"). Ea
 | 10    | 10     | 10    |
 | 1000  |||
 
-Here is an example of a complex table:
+## HTML tables
+
+Here is an example of a complex table using borrowed syntax from HTML:
 
 ```html
-
 <table>
 <caption id="multi_row">Complex table</caption>
 <tr><th>Column 1                      <th>Column 2        <th>Column 3
@@ -86,7 +95,7 @@ Here is an example of a complex table:
   </ul>
 </table>
 ```
-
+<!-- markdownlint-disable MD033 -->
 <table>
 <caption id="multi_row">Complex table</caption>
 <tr><th>Column 1                      <th>Column 2        <th>Column 3

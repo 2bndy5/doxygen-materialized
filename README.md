@@ -1,7 +1,15 @@
 # Doxygen Materialized
 
 <!-- markdownlint-disable -->
+
+\tableofcontents
+
 This repo contains some of my customizations for adapting Doxygen's HTML output using some Material Design.
+
+🚧
+This theme is still an alpha state Work-In-Progress. It is not ready for release and the instructions
+outlined are subject to change without notice.
+🚧
 
 If your project is already using customized header, footer, and layout files, then you might just consider this repository an inspiration to copy from, since this repository carries an MIT License.
 - Note that material icons have been embedded via CSS, and they are subject to Google's Apache
@@ -32,7 +40,7 @@ to semantic versioning).
   ```txt
   HTML_HEADER = doxygen-materialized/templates/header.html
   HTML_FOOTER = doxygen-materialized/templates/footer.html
-  HTML_EXTRA_STYLESHEET = doxygen-materialized/css/theme.min.css
+  HTML_STYLESHEET = doxygen-materialized/css/theme.min.css
   HTML_EXTRA_FILES += doxygen-materialized/favicon.ico
   HTML_EXTRA_FILES += doxygen-materialized/js/materialize.min.js
   HTML_EXTRA_FILES += doxygen-materialized/js/clipboard.min.js

@@ -1,3 +1,10 @@
+/**  This global variable used to access the html dom element for the slide-out nav menu. */
+var sideNav = document.getElementById("slide-out");
+
+var pathName = window.location.pathname.match(/.*\/(.*\.html)/)[1];
+var hashName = window.location.hash;
+// console.log({pathName: pathName, hashName: hashName});
+
 /**
  * @brief creates a clickable item for use in the side-nav list (or sub-list).
  * 
@@ -9,13 +16,13 @@
  * @returns a `<li>` element to be appended to the side-nav
  */
 function createMenuItem(child, id, index) {
-    var newitem = document.createElement("li");
+    var newItem = document.createElement("li");
     var menuLabel = document.createElement("a"); // a link element to contain the label
     if (child.children) {
         var menuId = id + "-" + index;
         var divLabel = document.createElement("div");
         divLabel.classList.add("menu-next");
-        newitem.append(divLabel);
+        newItem.append(divLabel);
 
         menuLabel = document.createElement("label");
         menuLabel.setAttribute("for", menuId);
@@ -34,7 +41,7 @@ function createMenuItem(child, id, index) {
         menuToggle.name = menuId;
         menuToggle.type = "checkbox";
         menuToggle.classList.add("menu-toggle");
-        newitem.append(menuToggle);
+        newItem.append(menuToggle);
 
         var divMenu = document.createElement("div");
         divMenu.classList.add(menuId, "sub-menu");
@@ -54,27 +61,18 @@ function createMenuItem(child, id, index) {
             subItems.append(createMenuItem(child.children[i], menuId, i));
         }
         divMenu.append(subItems);
-        newitem.append(divMenu);
+        newItem.append(divMenu);
     } else {
         // if no children, then make the `<a>` element a hyperlink
         menuLabel.href = child.url;
-        newitem.prepend(menuLabel);
+        newItem.prepend(menuLabel);
+        if (menuLabel.href.includes("#") && menuLabel.href.split("#")[0] === pathName) {
+            newItem.classList.add("sidenav-close");
+        }
     }
     menuLabel.prepend(document.createTextNode(child.text));
-    return newitem;
+    return newItem;
 }
-
-
-/** 
- * The navtree data (an array) is split across multiple js files (depending on the project's
- * documented objects). Only the root of the data's array (navtree.js) is loaded in the html.
- * We'll need to load the subsequent data dynamically to fill out the side-nav menu when
- * `GENERATE_TREEVIEW = TES`.
- * 
- * This global variable will be our flag to indicate the data is loaded and ready to be
- * accessed/parsed.
- */
-var navDataLoaded = false;
 
 /**
  * @brief Moves the "doxygen tabs" (AKA index) into the side-nav list.
@@ -83,10 +81,10 @@ var navDataLoaded = false;
  * @param input The wrapping HTML element to extract (and modify) elements from.
  */
 function replaceTabbedIndex() {
-    var sideNav = document.querySelector("#slide-out .scroll-wrapper");
+    var sideNavContent = sideNav.getElementsByClassName("scroll-wrapper")[0];
     if (menudata && menudata.children) {
         for (var i = 0; i < menudata.children.length; i++) {
-            sideNav.append(createMenuItem(menudata.children[i], "nav", i));
+            sideNavContent.append(createMenuItem(menudata.children[i], "nav", i));
         }
     } else {
         console.error("variable 'menudata' is NULL or does not have any children.");
@@ -119,13 +117,13 @@ function loadScript(scriptName, func) {
  * @returns a `<li>` element to be appended to the side-nav
  */
 function createTreeItem(child, id, index) {
-    var newitem = document.createElement("li");
+    var newItem = document.createElement("li");
     var menuLabel = document.createElement("a"); // a link element to contain the label
     if (child[2]) {
         var menuId = id + "-" + index;
         var divLabel = document.createElement("div");
         divLabel.classList.add("menu-next");
-        newitem.append(divLabel);
+        newItem.append(divLabel);
 
         menuLabel = document.createElement("label");
         menuLabel.setAttribute("for", menuId);
@@ -144,7 +142,21 @@ function createTreeItem(child, id, index) {
         menuToggle.name = menuId;
         menuToggle.type = "checkbox";
         menuToggle.classList.add("menu-toggle");
-        newitem.append(menuToggle);
+        newItem.append(menuToggle);
+
+        // implement pseudo sync between side nav menu and current page location
+        if (child[1].split("#")[0] == pathName && !child[1].includes("#")) {
+            var checkboxes = document.querySelectorAll("input.menu-toggle");
+            checkboxes.forEach(function(el){ el.checked = false; });
+            menuToggle.checked = true;
+            var walkingId = menuId.substring(0, menuId.lastIndexOf("-"));
+            while (walkingId != "nav") {
+                checkboxes = document.querySelector("input#" + walkingId);
+                if (checkboxes) { checkboxes.checked = true; }
+                // else { console.log("checkbox", walkingId, "not found"); }
+                walkingId = walkingId.substring(0, walkingId.lastIndexOf("-"));
+            }
+        }
 
         var divMenu = document.createElement("div");
         divMenu.classList.add("sub-menu");
@@ -158,12 +170,19 @@ function createTreeItem(child, id, index) {
         backIcon.classList.add("material-icons");
         backIcon.append(document.createTextNode("west"));
         backToggle.append(backIcon);
+        var goToIcon = document.createElement("a");
+        goToIcon.href = child[1];
+        goToIcon.classList.add("material-icons-outlined", "tooltipped");
+        goToIcon.append(document.createTextNode("menu_open"));
+        M.Tooltip.init(goToIcon, { text: "Go to corresponding page", position: "left" });
+        backToggle.append(goToIcon);
         backToggle.append(document.createElement("br"));
         // add word-break elements if scoping operator is detected
         var words = child[0].split("::");
         if (words.length > 1) {
             backToggle.innerHTML += words.join("::<wbr>");
-        } else {
+        }
+        else {
             backToggle.append(document.createTextNode(child[0]));
         }
         divMenu.append(backToggle);
@@ -172,43 +191,48 @@ function createTreeItem(child, id, index) {
             loadScript(
                 child[2],
                 function () {
-                    var evalWorkaround = new Function("return " + child[2] + ";"); // jshint ignore:line
+                    var evalWorkaround = new Function("return " + child[2] + ";");
                     var arrData = evalWorkaround();
                     for (var d = 0; d < arrData.length; d++) {
                         subItems.append(createTreeItem(arrData[d], menuId, d));
                     }
                 }
             );
-        } else { // if not a string nor null, then it is a nested array
+        }
+        else { // if not a string nor null, then it is a nested array
             for (var i = 0; i < child[2].length; i++) {
                 subItems.append(createTreeItem(child[2][i], menuId, i));
             }
         }
         divMenu.append(subItems);
-        newitem.append(divMenu);
-    } else {
+        newItem.append(divMenu);
+    }
+    else {
         // if no children, then make the `<a>` element a hyperlink
         menuLabel.href = child[1];
-        newitem.prepend(menuLabel);
+        newItem.prepend(menuLabel);
+        if (child[1].includes("#")){
+            if (child[1].split("#")[0] == pathName) {
+                newItem.classList.add("sidenav-close");
+            }
+        }
     }
     menuLabel.classList.add("truncate");
     menuLabel.prepend(document.createTextNode(child[0]));
-    return newitem;
+    return newItem;
 }
 
 function initNavTree() {
     if (typeof (NAVTREE) === "undefined") {
         replaceTabbedIndex(); // Assumes DISABLE_INDEX = NO in Doxyfile
     } else {
-        var sideNav = document.querySelector("#slide-out .scroll-wrapper");
+        var sideNavContent = sideNav.getElementsByClassName("scroll-wrapper")[0];
         var navTree = NAVTREE[0][2];
         for (var i = 0; i < navTree.length; i++) {
-            sideNav.append(createTreeItem(navTree[i], "nav", i));
+            sideNavContent.append(createTreeItem(navTree[i], "nav", i));
         }
     }
 }
 
 // A dummy function that replaces the old function used by doxygen's default navtree feature
-function initResizable() {
-    return;
-}
+function initResizable() { return; }

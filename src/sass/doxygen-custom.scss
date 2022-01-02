@@ -7,6 +7,7 @@
 @use 'doxygen-html-components/search';
 @use 'doxygen-html-components/navbar';
 @use 'doxygen-html-components/api-pages';
+@use 'doxygen-html-components/fonts';
 
 body,
 div.header {
@@ -37,14 +38,20 @@ a:visited {
   }
 }
 
-a[name] {
+a[name],
+a.anchor {
   padding-top: 64px;
   margin-top: -64px;
+
+  .material-icons {
+    vertical-align: middle;
+    padding-left: 5px;
+  }
 }
 
 #scroll-to-top {
   position: fixed;
-  bottom: 4rem;
+  bottom: 8%;
   right: 2rem;
   display: none;
   background-color: hsl(var(--primary-hue), var(--darken-1), var(--darken-2));

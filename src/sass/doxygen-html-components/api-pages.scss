@@ -4,7 +4,28 @@
 .header,
 .contents {
   margin: 0 1rem;
+}
 
+.toc {
+  position: sticky !important;
+  top: 64px;
+  max-height: 85%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--primary-hue), var(--neutral), var(--neutral));
+
+  .table-of-contents {
+    a,
+    a:hover,
+    a:visited {
+      color: var(--text-color);
+    }
+    a:hover,
+    a.active {
+      border-color: var(--hyperlink-color);
+    }
+  }
 }
 
 .directory {
@@ -34,15 +55,13 @@
       border: 1px solid var(--hyperlink-color);
       vertical-align: inherit;
 
-      a, a:hover {
+      a,
+      a:hover,
+      a:visited {
         color: var(--text-color);
       }
     }
   }
-}
-
-.classindex dl.odd {
-  background-color: var(--tr-even-bg-color);
 }
 
 .dynheader {
