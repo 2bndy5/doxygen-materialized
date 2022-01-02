@@ -38,7 +38,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@068dc23d9710f1ba62e86896f84735d869951305 # pinned to v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./html
+          publish_dir: ./docs/build/html
 
   mk_dist:
     runs-on: ubuntu-latest
