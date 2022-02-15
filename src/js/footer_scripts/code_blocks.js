@@ -1,4 +1,3 @@
-
 /**
  * Doxygen uses its own (limited) way of highlighting syntax. Furthermore, each line is
  * encapsulated in its own `<div class="line">` which also includes the line's number (if any) as
@@ -101,7 +100,9 @@ function transformCodeBlocks() {
             var spanLineNumber = lines[0].querySelector("span.lineno");
             if (spanLineNumber) {
                 // we need the line's hyperlink and the span element containing the line number
-                linePre.append(spanLineNumber.previousElementSibling);
+                if (spanLineNumber.previousElementSibling) {
+                    linePre.append(spanLineNumber.previousElementSibling);
+                }
                 linePre.append(spanLineNumber);
                 linePre.lastElementChild.classList.remove("lineno");
                 linePre.lastElementChild.classList.add("line-number");

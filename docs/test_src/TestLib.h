@@ -14,9 +14,9 @@
 #include <cstdint>
 
 /**
- * A namespace just for our inheritence example.
+ * A namespace just for our inheritance example.
  */
-namespace InheritenceNamespace {
+namespace InheritanceNamespace {
 
 /** @brief An Abstract class for polymorphism. */
 class AbstractClass {
@@ -84,7 +84,7 @@ private:
 
 };
 
-}
+} // end InheritanceNamespace
 
 /**
  * @brief A namespace just for our template example.
@@ -134,4 +134,44 @@ private:
  * - `bool(0)`
  */
 extern TemplateClass quickStarter = TemplateClass<int, bool>(1, 0);
-}
+
+} // end templateNamespace
+
+
+/**
+ * @defgroup enum_options Enumerated Options
+ * @brief A modularized document for an enum in the global scope.
+ * 
+ * Multiple enums might best be namespaced for transparent scoping.
+ * @{
+ */
+
+/**
+ * @brief A generic enumeration of specific options/flags
+ * 
+ * Enums are great for users as they don't need to remember any values that
+ * might be specific to a project's internal machinery.
+ */
+enum OptionsEnum
+{
+    /**
+     * @brief Optional configurator 1
+     * 
+     * This enumerator's value is `0`.
+     */
+    CONFIG_OPT_1 = 0,
+    /** 
+     * @brief Optional configurator 2
+     * 
+     * This enumerator's value is `1`.
+     */
+    CONFIG_OPT_2,
+    /**
+     * @brief Optional configurator 3
+     * 
+     * This enumerator's value is `2`.
+     */
+    CONFIG_OPT_3,
+};
+
+/** @} */

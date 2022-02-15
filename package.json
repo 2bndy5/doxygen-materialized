@@ -2,7 +2,7 @@
   "name": "doxygen-materialized",
   "version": "0.1.0",
   "description": "adaptation of doxygen html output using material design",
-  "main": "index.js",
+  "main": "tools/index.js",
   "scripts": {
     "sass": "npx sass --load-path=./node_modules/@materializecss/materialize/sass --quiet-deps --style=compressed ./src/sass/doxygen-custom.scss docs/doxygen-materialized/css/theme.min.css",
     "copy_dists": "run-script-os",
@@ -13,9 +13,9 @@
     "copy_fonts:linux:darwin": "cp -r ./src/fonts ./docs/doxygen-materialized",
     "minify_js": "npx uglifyjs ./src/js/footer_scripts/*.js -o docs/doxygen-materialized/js/theme_footer_script.min.js --source-map && npx uglifyjs ./src/js/header_scripts/*.js -o docs/doxygen-materialized/js/theme_header_script.min.js --source-map",
     "build": "npm run sass && npm run minify_js && npm run copy_dists && npm run copy_fonts",
-    "doxygen": "npm run build && doxygen docs/Doxyfile",
+    "doxygen": "npm run build && doxygen ./docs/Doxyfile",
     "cp_build_to_dist": "run-script-os",
-    "cp_build_to_dist:win32": "robocopy .\\docs\\doxygen-materialized\\ .\\dist\\doxygen-materialized\\ /S /XF .git-keep",
+    "cp_build_to_dist:win32": "robocopy .\\docs\\doxygen-materialized\\ .\\dist\\doxygen-materialized\\ /MIR /S /XF .git-keep",
     "cp_build_to_dist:linux:darwin": "rsync -r ./docs/doxygen-materialized ./dist --exclude=.git-keep",
     "mk_dist": "npm run build && npm run cp_build_to_dist"
   },
@@ -30,10 +30,13 @@
     "type": "git",
     "url": "https://github.com/2bndy5/doxygen-materialized.git"
   },
+  "homepage": "https://2bndy5.github.io/doxygen-materialized",
   "devDependencies": {
+    "eslint": "^8.5.0"
+  },
+  "dependencies": {
     "@materializecss/materialize": "^1.1.0-alpha",
     "clipboard": "^2.0.8",
-    "eslint": "^8.5.0",
     "run-script-os": "^1.1.6",
     "sass": "^1.45.1",
     "uglify-js": "^3.14.5"

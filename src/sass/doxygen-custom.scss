@@ -42,10 +42,12 @@ a[name],
 a.anchor {
   padding-top: 64px;
   margin-top: -64px;
+  pointer-events: none;
 
   .material-icons {
     vertical-align: middle;
     padding-left: 5px;
+    pointer-events: auto; 
   }
 }
 

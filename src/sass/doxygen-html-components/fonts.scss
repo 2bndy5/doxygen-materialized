@@ -4,7 +4,7 @@
   font-weight: 400;
   src: local('Material Icons'),
     local('MaterialIcons-Regular'),
-    url(MaterialIcons-Regular.ttf) format('truetype');
+    url(MaterialIcons-Regular.woff) format('woff');
 }
 
 @font-face {
@@ -13,7 +13,7 @@
   font-weight: 400;
   src: local('Material Icons Round'),
     local('MaterialIconsRound-Regular'),
-    url(MaterialIconsRound-Regular.otf) format('opentype');
+    url(MaterialIconsRound-Regular.woff) format('woff');
 }
 
 @font-face {
@@ -22,7 +22,7 @@
   font-weight: 400;
   src: local('Material Icons Outlined'),
     local('MaterialIconsOutlined-Regular'),
-    url(MaterialIconsOutlined-Regular.otf) format('opentype');
+    url(MaterialIconsOutlined-Regular.woff) format('woff');
 }
 
 @mixin material-icon-font {

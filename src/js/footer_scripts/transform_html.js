@@ -31,7 +31,7 @@ var navbarTitle = document.createElement("li");
 function insertNavbarTitle() {
     var titleSpan = document.createElement("span");
     titleSpan.id = "page-topic";
-    titleSpan.classList.add("flow-text", "hide-on-small-only");
+    titleSpan.classList.add("flow-text", "hide-on-small-only", "truncate");
     titleSpan.innerHTML = docTitle.innerHTML;
     navbarTitle.append(titleSpan);
     navbarTitle.hidden = true;

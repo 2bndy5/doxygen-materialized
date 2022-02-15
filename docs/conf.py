@@ -6,7 +6,7 @@ import subprocess
 # sphinx generates separate documentation from index.rst and outputs that to "_build/html".
 # Use sphinx's html_extra_path option to overwrite the dummy sphinx documentation with
 # doxygen's html output.
-html_extra_path = ['build/html']  # relative to the docs folder
+html_extra_path = ["build/html"]  # relative to the docs folder
 
 print("Using Doxygen version", end=" ")
 subprocess.run(["doxygen", "--version"], check=True)
@@ -20,7 +20,7 @@ subprocess.run(["doxygen", "--version"], check=True)
 # first install theme's dev dependencies
 if not os.path.exists("../node_modules"):
     print("Theme dependencies not present. Running `npm install`")
-    subprocess.run(["npm", "install"], check=True)
+    subprocess.run(["npm", "install", ".."], check=True, shell=True)
 
 # now run the package script called "doxygen"
-subprocess.run(["npm", "run", "doxygen"], check=True)
+subprocess.run(["npm", "run", "doxygen"], check=True, shell=True)

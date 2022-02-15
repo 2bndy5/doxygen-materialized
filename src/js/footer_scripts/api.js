@@ -1,14 +1,13 @@
-
 /**
  * Some `section` classed elements (in member's detailed descriptions) use tables to
  * mandate uniform margins on 1 line. Material design prefers the use of data fields in
  * which description is a subsequent line with increased indent.
  * 
  * Thus, we'll convert the tables into more responsive grid.
- * Review the [materialize-css docs about using their 12 column grids](
- * https://materializecss.github.io/materialize/grid.html#grid-intro)
+ * Review materialize-css docs about using their 12 column grids
+ * (https://materializecss.github.io/materialize/grid.html#grid-intro).
  * 
- * @param className {string} A CSS class name identifying the `<table>` elements to
+ * @param {string} className A CSS class name identifying the `<table>` elements to
  * convert into responsive grid.
  */
 function replaceSectionTableWithDataLists(className) {
@@ -26,14 +25,24 @@ function replaceSectionTableWithDataLists(className) {
             var paramName = document.createElement("div");
             paramName.classList.add("col", "s5", "m3", "l2", "right-align");
             var paramDesc = document.createElement("div");
-            paramDesc.classList.add("col", "s7", "m9", "l10");
+
+            if (rowCells.length == 0 || !rowCells) {
+                // check for header cells
+                rowCells = tableRows[j].getElementsByTagName("th");
+                paramDesc.classList.add("col", "s12");
+            }
+            else {
+                paramDesc.classList.add("col", "s7", "m9", "l10");
+            }
 
             for (var k = 0; k < rowCells.length; k++) {
                 if (rowCells[k].classList.contains("paramdir")) {
                     paramDir = " " + rowCells[k].innerHTML;
                 }
-                else if (rowCells[k].classList.contains("paramname")) {
-                    paramName.classList.add("paramname");
+                else if (rowCells[k].classList.contains("paramname") || rowCells[k].classList.contains("fieldname")) {
+                    rowCells[k].classList.forEach(function (className) {
+                        paramName.classList.add(className);
+                    });
                     paramName.innerHTML = rowCells[k].innerHTML;
                     if (paramDir.length > 0) {
                         var spanParamDir = document.createElement("em");
@@ -44,6 +53,9 @@ function replaceSectionTableWithDataLists(className) {
                     newRow.append(paramName);
                 }
                 else {
+                    rowCells[k].classList.forEach(function (className) {
+                        paramDesc.classList.add(className);
+                    });
                     // let's assume everything else is part of the description
                     paramDesc.innerHTML = rowCells[k].innerHTML;
                     newRow.append(paramDesc);
@@ -57,6 +69,7 @@ function replaceSectionTableWithDataLists(className) {
 replaceSectionTableWithDataLists("params");
 replaceSectionTableWithDataLists("tparams");
 replaceSectionTableWithDataLists("retval");
+replaceSectionTableWithDataLists("fieldtable");
 
 /**
  * Consolidate `@retval` with corresponding `@return` description.
@@ -108,7 +121,7 @@ function modifyDeclarations() {
         var inheritedDetails = false; // flag to signify nested rows
         for (var j = 0; j < rows.length; j++) {
             var hasContent = true; // flag to trigger adding content as a new row
-            var newRow = document.createElement("div");
+            var newRow;
             if (rows[j].classList.contains("inherit_header")) {
                 // use HTML5's details/summary tags for inherited members listed
                 newRow = document.createElement("details");
@@ -128,6 +141,7 @@ function modifyDeclarations() {
                 inheritedDetails = true;
             }
             else {
+                newRow = document.createElement("div");
                 for (var k = 0; k < rows[j].children.length; k++) {
                     var newCol = document.createElement("div");
                     newCol.classList.add("col");
@@ -204,6 +218,58 @@ function modifyDeclarations() {
 modifyDeclarations();
 
 /**
+ * Transform member prototypes into responsive grids.
+ * This aims to keep the member prototypes mobile friendly.
+ * @param parentElement {Element} This should typically be an element classed by `memproto`.
+ * @returns A div Element containing the member prototype as a responsive grid instead of a table.
+ */
+function transformMemberPrototypes(parentElement) {
+    var tableRows = parentElement.getElementsByTagName("tr");
+    var newRow = document.createElement("div");
+    newRow.classList.add("memdecl", "row");
+    for (var k = 0; k < tableRows.length; k++) {
+        var rowCells = tableRows[k].getElementsByTagName("td");
+        for (var j = 0; j < rowCells.length; j++) {
+            var newCell = document.createElement("div");
+            rowCells[j].classList.forEach(function (token) {
+                newCell.classList.add(token);
+            });
+            newCell.classList.add("col");
+            var modifiedHTML = rowCells[j].innerHTML.replaceAll("::", "::<wbr>");
+            modifiedHTML = modifiedHTML.replaceAll(".", "<wbr>.");
+            modifiedHTML = modifiedHTML.trim();
+            if (rowCells[j].classList.contains("memname")) {
+                newCell.classList.add("s12");
+            }
+            else if (rowCells[j].classList.length == 0) {
+                newCell.classList.add("s1");
+            }
+            else if (rowCells[j].classList.contains("paramname")) {
+                newCell.classList.add('s9');
+            }
+            else if (rowCells[j].classList.contains("paramtype")) {
+                newCell.classList.add("s3");
+            }
+
+            if (rowCells[j].innerHTML == "(" || rowCells[j].innerHTML == ")") {
+                newRow.lastElementChild.innerHTML += " <span class=\"parenthesis\">" + rowCells[j].innerHTML + "</span>";
+            }
+            newCell.innerHTML = modifiedHTML;
+            if (!rowCells[j].classList.contains("paramkey")
+                && !(tableRows.length - 1 == k && modifiedHTML.length == 0)
+                && modifiedHTML.length > 0
+                && modifiedHTML != "("
+                && modifiedHTML != ")"
+                // && modifiedHTML != "&nbsp;"
+                ) {
+                newRow.append(newCell);
+            }
+        }
+    }
+    return newRow;
+}
+
+/**
  * @brief A helper function to extract the generated labels (resembling badges) from prototypes
  * 
  * @param parentElement {Element} This should typically be an element classed by `memproto`.
@@ -211,12 +277,13 @@ modifyDeclarations();
  */
 function extractLabels(parentElement) {
     var memberPrototypes = parentElement.querySelectorAll(".mlabel");
+    var actualPrototype = parentElement.querySelector("table.memname");
     if (memberPrototypes.length > 0) {
-        var actualPrototype = parentElement.querySelector("table.memname");
         var containerTable = parentElement.querySelector("table.mlabels");
-        containerTable.replaceWith(actualPrototype);
+        containerTable.replaceWith(transformMemberPrototypes(actualPrototype));
         return memberPrototypes;
     }
+    actualPrototype.replaceWith(transformMemberPrototypes(actualPrototype));
     return null;
 }
 
@@ -260,7 +327,7 @@ function adaptMemberTitle() {
             if (memTitles[i].children[j].classList.contains("permalink")) {
                 iconLink.classList.add("permalink");
                 // assuming the `<span>` only has 1 child (`<a>` link), copy the href from it
-                iconLink.href = memTitles[i].children[j].children[0].href;
+                iconLink.href = memTitles[i].children[j].children[0].getAttribute("href");
                 // remove old hyperlink text, so it isn't copied with `innerHTML`
                 memTitles[i].removeChild(memTitles[i].children[j]);
             }

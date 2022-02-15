@@ -20,12 +20,18 @@
     a:hover,
     a:visited {
       color: var(--text-color);
+      padding-left: 10px;
     }
     a:hover,
     a.active {
       border-color: var(--hyperlink-color);
+      padding-left: 10px;
     }
   }
+}
+
+.toc .table-of-contents [class^="level"]:not(.level1){
+  padding-left: 7px;
 }
 
 .directory {
@@ -104,6 +110,21 @@ h1,
   @extend .flow-text;
 }
 
+h1, h2, h3, h4, h5 {
+  a {
+    opacity: 0;
+  }
+  &:hover a{
+    opacity: 0.5;
+    color: var(--text-color);
+
+    &:hover {
+      opacity: 1;
+      color: var(--hyperlink-color);
+    }
+  }
+}
+
 blockquote {
   background-color: var(--blockquote-bg-color);
   border-top-left-radius: 0.1rem;
@@ -155,26 +176,39 @@ blockquote {
 }
 
 .memproto,
-dl.reflist dt {
+dl.reflist dt,
+.compoundTemplParams {
   color: var(--proto-text-color);
   border-color: hsl(var(--primary-hue), var(--darken-3), var(--lighten-3));
   background-color: var(--member-proto-bg-color);
+
+  .paramtype {
+    text-align: right;
+  }
+
+  .paramname .parenthesis {
+    color: var(--proto-text-color);
+  }
 }
 
+.compoundTemplParams,
 .memtemplate {
   color: hsl(var(--primary-hue), var(--darken-2), var(--darken-1));
-}
-
-.memname {
-  width: fit-content;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
 .memdoc {
   margin: 0 1.5rem;
+
+  .fielddoc p:first-child {
+    margin-top: 0;
+  }
 }
 
 .memname {
   border-collapse: unset;
+  width: fit-content;
 
   tbody {
     line-height: initial;

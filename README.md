@@ -6,10 +6,10 @@
 
 This repo contains some of my customizations for adapting Doxygen's HTML output using some Material Design.
 
-🚧
+@warning 🚧
 This theme is still an alpha state Work-In-Progress. It is not ready for release and the instructions
 outlined are subject to change without notice.
-🚧
+
 
 If your project is already using customized header, footer, and layout files, then you might just consider this repository an inspiration to copy from, since this repository carries an MIT License.
 - Note that material icons have been embedded via CSS, and they are subject to Google's Apache

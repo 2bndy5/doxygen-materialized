@@ -10,7 +10,8 @@ CTestTestfile.cmake
 node_modules/
 docs/*build/
 **/doxygen-materialized/js/*
-**/doxygen-materialized/css/*
+**/doxygen-materialized/css/
+**/doxygen-materialized/fonts/
 dist/doxygen-materialized/
 !**/.git-keep
 .vscode/

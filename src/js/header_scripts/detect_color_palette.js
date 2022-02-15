@@ -1,6 +1,8 @@
-// toggle to switch classes between .light and .dark
-// if no class is present (initial state), then assume current state based on system color scheme
-//determines if the user has a set theme
+/**
+ * Detect the user's OS theme preferences and set the toggle button appropriately
+ * Additionally set a `data-theme` attribute to "light"/"dark" on the DOM's root node
+ * (the <html> tag).
+ */
 function detectColorScheme() {
     var theme = "light"; //default to light
 

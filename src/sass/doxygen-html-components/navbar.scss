@@ -7,6 +7,10 @@ nav {
   position: sticky;
   top: 0;
   z-index: 1;
+  
+  .truncate {
+    display: inline-flex;
+  }
 
   img#MSearchSelect {
     display: none;

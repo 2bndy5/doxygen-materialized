@@ -1,4 +1,3 @@
-var scrollSpyInstances = null;
 /**
  * Add css classes to style the page's ToC as a secondary sticky nav menu (on the right).
  * This feature is dependent on the project's use of `\tableofcontents` doxygen cmd.
@@ -15,7 +14,7 @@ function styleSecondaryToc() {
     for (var j = 0; j < nestedLists.length; j++) {
         nestedLists[j].classList.add("table-of-contents");
         if (j > 0) {
-            nestedLists[j].setAttribute("style", "padding-left: 0.8rem !important");
+            nestedLists[j].attributes["style"] = "padding-left: 0.8rem !important";
         }
     }
 
@@ -27,12 +26,12 @@ function styleSecondaryToc() {
             var linkIcon = document.createElement("span");
             linkIcon.classList.add("material-icons");
             linkIcon.innerHTML = "link";
-            anchors[i].href = "#" + anchors[i].id;
+            anchors[i].setAttribute("href", "#" + anchors[i].id);
             anchors[i].append(linkIcon);
             anchors[i].parentElement.append(anchors[i]);
         }
     }
-    scrollSpyInstances = M.ScrollSpy.init(
+    M.ScrollSpy.init(
         document.querySelectorAll('.scrollspy'),
         { scrollOffset: 0 }
     );

@@ -22,11 +22,15 @@ function replaceSearchCloseImg() {
     var closeLink = document.getElementById("MSearchClose");
     if (closeLink) {
         closeLink.innerHTML = "<span id=\"MSearchCloseImg\" class=\"material-icons\">close</span>";
-        closeLink.style = "display: none;";
+        closeLink.setAttribute("style", "display: none;");
     }
 }
 replaceSearchCloseImg();
 
+/**
+ * A global reference the HTMLDivElement that will contain the new dropdown menu of
+ * search parameters.
+ */
 var searchParamList = document.getElementById("searchParameters");
 
 /**
@@ -84,6 +88,12 @@ init_search = function () {
     );
 }
 
+/**
+ * override the searchBox class' function that updates the list of elements representing the
+ * search parameters.
+ * @param {function} id A indexing identifying number of the search parameter (All, Function,
+ * Variables, etc).
+ */
 searchBox.SelectItemSet = function (id) {
     for (var i = 0; i < searchParamList.children.length; i++) {
         var node = searchParamList.children[i].querySelector("input");
