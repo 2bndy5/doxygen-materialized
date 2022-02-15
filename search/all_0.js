@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['abstractclass_0',['AbstractClass',['../classInheritenceNamespace_1_1AbstractClass.html#ac95d04c37a6d00ef76a161166733ad02',1,'InheritenceNamespace::AbstractClass::AbstractClass()'],['../classInheritenceNamespace_1_1AbstractClass.html',1,'InheritenceNamespace::AbstractClass']]],
-  ['admonitions_1',['Admonitions',['../md_test_src_admonitions.html',1,'']]],
-  ['admonitions_2emd_2',['admonitions.md',['../admonitions_8md.html',1,'']]]
+  ['_5f_5finit_5f_5f_0',['__init__',['../classtest__module_1_1BaseClass.html#a84c2474aa4d9a28d525e65d2fcf2ec1f',1,'test_module.BaseClass.__init__()'],['../classtest__module_1_1ChildClass.html#a485aa0ad944d61cbd063bec1839a6d65',1,'test_module.ChildClass.__init__()']]]
 ];

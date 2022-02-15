@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['inheritencenamespace_0',['InheritenceNamespace',['../namespaceInheritenceNamespace.html',1,'']]]
+  ['deprecated_20list_0',['Deprecated List',['../deprecated.html',1,'']]],
+  ['doxygen_20materialized_1',['Doxygen Materialized',['../index.html',1,'']]]
 ];

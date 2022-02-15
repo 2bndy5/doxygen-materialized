@@ -1,4 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classInheritenceNamespace_1_1AbstractClass.html" title="An Abstract class for polymorphism." alt="" coords="5,5,177,47"/>
-<area shape="rect" id="node2" href="$structInheritenceNamespace_1_1TestClass.html" title="A derivative of AbstractClass." alt="" coords="225,5,397,47"/>
+<area shape="rect" id="node1" href="$classInheritanceNamespace_1_1AbstractClass.html" title="An Abstract class for polymorphism." alt="" coords="5,5,177,47"/>
+<area shape="rect" id="node2" href="$structInheritanceNamespace_1_1TestClass.html" title="A derivative of AbstractClass." alt="" coords="225,5,397,47"/>
 </map>

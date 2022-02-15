@@ -1,5 +1,6 @@
 var namespaces_dup =
 [
-    [ "InheritenceNamespace", "namespaceInheritenceNamespace.html", "namespaceInheritenceNamespace" ],
-    [ "templateNamespace", "namespacetemplateNamespace.html", "namespacetemplateNamespace" ]
+    [ "InheritanceNamespace", "namespaceInheritanceNamespace.html", "namespaceInheritanceNamespace" ],
+    [ "templateNamespace", "namespacetemplateNamespace.html", "namespacetemplateNamespace" ],
+    [ "test_module", "namespacetest__module.html", "namespacetest__module" ]
 ];

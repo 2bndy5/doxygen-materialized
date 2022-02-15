@@ -2,38 +2,28 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <!-- HTML header for doxygen 1.9.1-->
 <head>
-    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta charset=UTF-8>
     <meta name="generator" content="Doxygen 1.9.3" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- material icons are served locally, but if you prefer they can be fetched remotely like so: -->
-    <!-- fetch material icons -- >
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Icons+TwoTone&family=Material+Icons+Outlined&family=Material+Icons+Round&family=Material+Icons"
-        rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto=mono" rel="stylesheet" type="text/css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,400;1,500&family=Roboto:ital,wght@0,100;0,400;1,500&display=swap"
-        rel="stylesheet">
-    <!-- end material icons -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>Doxygen Materialized: Class Members - Variables</title>
     <!-- <link href="tabs.css" rel="stylesheet" type="text/css"/> -->
     <script type="text/javascript" src="jquery.js"></script>
-    <script type="text/javascript" src="dynsections.js"></script>
+    <!-- <script type="text/javascript" src="dynsections.js"></script> -->
     <!-- $ treeview -->
     <!-- $ search -->
     <script type="text/javascript" src="search/searchdata.js"></script>
     <script type="text/javascript" src="search/search.js"></script>
-    <script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX","output/HTML-CSS"],
-});
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
 </script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
     <link href="theme.min.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="navtreedata.js"></script>
     <script type="text/javascript" src="materialize.min.js"></script>
@@ -152,8 +142,10 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 
 <div class="contents">
 &#160;<ul>
-<li>myVar&#160;:&#160;<a class="el" href="structInheritenceNamespace_1_1TestClass.html#a4f3be9e96fd1afb6c268e847e916ea4d">InheritenceNamespace::TestClass</a></li>
-<li>parentVar&#160;:&#160;<a class="el" href="classInheritenceNamespace_1_1AbstractClass.html#a054b565d4d0ba67c5350a187ab47cbca">InheritenceNamespace::AbstractClass</a></li>
+<li>myVar&#160;:&#160;<a class="el" href="structInheritanceNamespace_1_1TestClass.html#a85eb513e5982655c723740ac7a1f9973">InheritanceNamespace::TestClass</a></li>
+<li>parentVar&#160;:&#160;<a class="el" href="classInheritanceNamespace_1_1AbstractClass.html#aa2339a025078a883c32eba97c6b1e542">InheritanceNamespace::AbstractClass</a></li>
+<li>public_x&#160;:&#160;<a class="el" href="classtest__module_1_1BaseClass.html#a51e13ff519565ca60a8babf6841b7693">test_module.BaseClass</a></li>
+<li>public_y&#160;:&#160;<a class="el" href="classtest__module_1_1ChildClass.html#a23c59ce0628974a8d240ff432883c07b">test_module.ChildClass</a></li>
 <li>var1&#160;:&#160;<a class="el" href="classtemplateNamespace_1_1TemplateClass.html#ae4cc7bc5b249245c7df8d672f8049d94">templateNamespace::TemplateClass&lt; T, R &gt;</a></li>
 <li>var2&#160;:&#160;<a class="el" href="classtemplateNamespace_1_1TemplateClass.html#a970c8061f66cd26fe3e794da444eaf47">templateNamespace::TemplateClass&lt; T, R &gt;</a></li>
 </ul>
@@ -169,7 +161,7 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
     <script type="text/javascript">M.AutoInit();</script>
     <footer class="page-footer">
       <div class="container right">
-        Generated on Sun Jan 2 2022 20:42:49 for Doxygen Materialized by <a href="https://www.doxygen.org/index.html">Doxygen v1.9.3</a>.<br>
+        Generated on Tue Feb 15 2022 13:01:59 for Doxygen Materialized by <a href="https://www.doxygen.org/index.html">Doxygen v1.9.3</a>.<br>
         Using <a href="https://github.com/2bndy5/doxygen-materialized">doxygen-materialized theme from 2bndy5</a>.
       </div>
     </footer>

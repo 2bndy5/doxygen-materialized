@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quickstarter_0',['quickStarter',['../namespacetemplateNamespace.html#a6c47c8a13a01b685defd39214746eacc',1,'templateNamespace']]]
+  ['has_5fcode_0',['has_code',['../classInheritanceNamespace_1_1AbstractClass.html#ac6f905381cd6e7b3fd49f1eaedc56801',1,'InheritanceNamespace::AbstractClass']]]
 ];

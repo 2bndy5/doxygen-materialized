@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['parentvar_0',['parentVar',['../classInheritenceNamespace_1_1AbstractClass.html#a054b565d4d0ba67c5350a187ab47cbca',1,'InheritenceNamespace::AbstractClass']]]
+  ['global_5ffunc_0',['global_func',['../namespacetest__module.html#ab08bc44533e5e7a6ac5b1a7a09bca3cd',1,'test_module']]]
 ];

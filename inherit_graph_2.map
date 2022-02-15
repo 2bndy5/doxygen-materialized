@@ -1,0 +1,4 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classtest__module_1_1BaseClass.html" title="A class meant for inheritence." alt="" coords="5,5,180,32"/>
+<area shape="rect" id="node2" href="$classtest__module_1_1ChildClass.html" title="A child class that inheritsc from the BaseClass." alt="" coords="228,5,403,32"/>
+</map>

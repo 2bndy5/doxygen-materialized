@@ -2,38 +2,28 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <!-- HTML header for doxygen 1.9.1-->
 <head>
-    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta charset=UTF-8>
     <meta name="generator" content="Doxygen 1.9.3" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- material icons are served locally, but if you prefer they can be fetched remotely like so: -->
-    <!-- fetch material icons -- >
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Icons+TwoTone&family=Material+Icons+Outlined&family=Material+Icons+Round&family=Material+Icons"
-        rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto=mono" rel="stylesheet" type="text/css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,400;1,500&family=Roboto:ital,wght@0,100;0,400;1,500&display=swap"
-        rel="stylesheet">
-    <!-- end material icons -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>Doxygen Materialized: Class Members - Functions</title>
     <!-- <link href="tabs.css" rel="stylesheet" type="text/css"/> -->
     <script type="text/javascript" src="jquery.js"></script>
-    <script type="text/javascript" src="dynsections.js"></script>
+    <!-- <script type="text/javascript" src="dynsections.js"></script> -->
     <!-- $ treeview -->
     <!-- $ search -->
     <script type="text/javascript" src="search/searchdata.js"></script>
     <script type="text/javascript" src="search/search.js"></script>
-    <script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX","output/HTML-CSS"],
-});
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
 </script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
     <link href="theme.min.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="navtreedata.js"></script>
     <script type="text/javascript" src="materialize.min.js"></script>
@@ -152,9 +142,11 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 
 <div class="contents">
 &#160;<ul>
-<li>AbstractClass()&#160;:&#160;<a class="el" href="classInheritenceNamespace_1_1AbstractClass.html#ac95d04c37a6d00ef76a161166733ad02">InheritenceNamespace::AbstractClass</a></li>
-<li>has_code()&#160;:&#160;<a class="el" href="classInheritenceNamespace_1_1AbstractClass.html#a8a8a4c06281f4d84820df074bd9ea507">InheritenceNamespace::AbstractClass</a></li>
-<li>morphMe()&#160;:&#160;<a class="el" href="classInheritenceNamespace_1_1AbstractClass.html#a0373ad3726b92feb0933cb3a7bf369ea">InheritenceNamespace::AbstractClass</a>, <a class="el" href="structInheritenceNamespace_1_1TestClass.html#a40d9e4cc0f4214150620c14a65ddd224">InheritenceNamespace::TestClass</a></li>
+<li>__init__()&#160;:&#160;<a class="el" href="classtest__module_1_1BaseClass.html#a84c2474aa4d9a28d525e65d2fcf2ec1f">test_module.BaseClass</a>, <a class="el" href="classtest__module_1_1ChildClass.html#a485aa0ad944d61cbd063bec1839a6d65">test_module.ChildClass</a></li>
+<li>AbstractClass()&#160;:&#160;<a class="el" href="classInheritanceNamespace_1_1AbstractClass.html#ac289c47b47aaab9a3152b344517f065e">InheritanceNamespace::AbstractClass</a></li>
+<li>has_code()&#160;:&#160;<a class="el" href="classInheritanceNamespace_1_1AbstractClass.html#ac6f905381cd6e7b3fd49f1eaedc56801">InheritanceNamespace::AbstractClass</a></li>
+<li>morphMe()&#160;:&#160;<a class="el" href="classInheritanceNamespace_1_1AbstractClass.html#aab4ed2854f068d2131ca3b6ebe150927">InheritanceNamespace::AbstractClass</a>, <a class="el" href="structInheritanceNamespace_1_1TestClass.html#ada50b2ac46ab5eb88555d4172565e747">InheritanceNamespace::TestClass</a></li>
+<li>print_os_name()&#160;:&#160;<a class="el" href="classtest__module_1_1ChildClass.html#ae117ded137e6fdf8e6d42d306ce052fe">test_module.ChildClass</a></li>
 <li>TemplateClass()&#160;:&#160;<a class="el" href="classtemplateNamespace_1_1TemplateClass.html#a354cfb802ba9894214d9c0cdecb4daf0">templateNamespace::TemplateClass&lt; T, R &gt;</a></li>
 <li>test()&#160;:&#160;<a class="el" href="classtemplateNamespace_1_1TemplateClass.html#a18dab0250d3d4e4f0218517998ae5916">templateNamespace::TemplateClass&lt; T, R &gt;</a></li>
 </ul>
@@ -170,7 +162,7 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
     <script type="text/javascript">M.AutoInit();</script>
     <footer class="page-footer">
       <div class="container right">
-        Generated on Sun Jan 2 2022 20:42:49 for Doxygen Materialized by <a href="https://www.doxygen.org/index.html">Doxygen v1.9.3</a>.<br>
+        Generated on Tue Feb 15 2022 13:01:59 for Doxygen Materialized by <a href="https://www.doxygen.org/index.html">Doxygen v1.9.3</a>.<br>
         Using <a href="https://github.com/2bndy5/doxygen-materialized">doxygen-materialized theme from 2bndy5</a>.
       </div>
     </footer>
