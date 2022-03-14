@@ -76,12 +76,17 @@
     </nav>
 
     <div id="slide-out" class="sidenav">
-        <div class="side-nav-header" style="text-align: center;">
+        <div class="side-nav-header">
             <a href="index.html">
-                <!--BEGIN PROJECT_LOGO-->
-                <img alt="Logo" src="$relpath^$projectlogo" />
-                <!--END PROJECT_LOGO-->
-                <div>
+                <div class="project-logo">
+                    <!--BEGIN PROJECT_LOGO-->
+                    <img alt="Logo" src="$relpath^$projectlogo" />
+                    <!--END PROJECT_LOGO-->
+                    <!--BEGIN !PROJECT_LOGO-->
+                    <span class="material-icons-round">home</span>
+                    <!--END !PROJECT_LOGO-->
+                </div>
+                <div class="project-info">
                     <!--BEGIN PROJECT_NAME-->
                     $projectname
                     <!--END PROJECT_NAME-->

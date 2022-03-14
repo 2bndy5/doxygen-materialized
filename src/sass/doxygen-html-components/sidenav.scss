@@ -34,6 +34,32 @@
     padding-bottom: 60px;
   }
 
+  .side-nav-header {
+    text-align: center;
+
+    .project-logo {
+      width: 300px;
+      height: 140px;
+
+      .material-icons-round{
+        font-size: 144px;
+      }
+
+      img {
+        padding: 5px;
+        width: inherit;
+        height: inherit;
+        object-fit: contain;
+      }
+    }
+
+    .project-info {
+      font-size: 20px;
+      padding-bottom: 5px;
+    }
+  }
+
+
   .menu-next {
     color: var(--text-color);
     display: inline-block;
